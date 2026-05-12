@@ -1,0 +1,2122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Clinical hydration & electrolyte reference database — 30+ products, 23 biological pathways, India context, AI Q&A. Brand-neutral, peer-reviewed sources.">
+<title>Hydration Reference — Clinical Electrolyte Database</title>
+<meta name="robots" content="index, follow">
+<meta name="theme-color" content="#0f172a">
+<link rel="canonical" href="https://wellversed.in/osmo/hydration">
+<!-- Open Graph / social sharing -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="Hydration Reference — Clinical Electrolyte Database">
+<meta property="og:description" content="Brand-neutral clinical reference: 30+ hydration products, 23 biological pathways, peer-reviewed sources, India context, AI Q&A.">
+<meta property="og:url" content="https://wellversed.in/osmo/hydration">
+<meta property="og:site_name" content="Hydration Reference">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Hydration Reference — Clinical Electrolyte Database">
+<meta name="twitter:description" content="Brand-neutral clinical reference: 30+ hydration products, 23 biological pathways, peer-reviewed sources, India context.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+Pro:wght@600;700&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+
+/* ============ DESIGN SYSTEM ============ */
+:root{
+  --primary:#0D7377;--primary-2:#0E8488;--primary-3:#E0F2F1;
+  --alert:#FF6B6B;--alert-2:#FFE5E5;
+  --bg:#FAFAF8;--surface:#FFFFFF;--surface-alt:#F5F5F2;
+  --ink:#1A1A1A;--ink-2:#4A4A4A;--ink-3:#6B7280;--ink-4:#9CA3AF;
+  --border:#E5E5E0;--border-2:#D1D1CC;
+  --shadow:0 1px 3px rgba(0,0,0,0.08);--shadow-2:0 4px 12px rgba(0,0,0,0.12);--shadow-3:0 8px 24px rgba(0,0,0,0.15);
+  --ev-high:#059669;--ev-high-bg:#D1FAE5;
+  --ev-med:#D97706;--ev-med-bg:#FEF3C7;
+  --ev-low:#64748B;--ev-low-bg:#F1F5F9;
+  --ev-mixed:#7C3AED;--ev-mixed-bg:#EDE9FE;
+  --r-sm:4px;--r-md:8px;--r-lg:12px;--r-xl:16px;
+  --gap-sm:8px;--gap-md:16px;--gap-lg:24px;--gap-xl:32px;
+}
+[data-theme="dark"]{
+  --bg:#0A192F;--surface:#112240;--surface-alt:#1B2C4F;
+  --ink:#E6F1FF;--ink-2:#CCD6F6;--ink-3:#8892B0;--ink-4:#5A6B85;
+  --border:#1F3458;--border-2:#2A4373;
+  --shadow:0 1px 3px rgba(0,0,0,0.4);--shadow-2:0 4px 12px rgba(0,0,0,0.5);--shadow-3:0 8px 24px rgba(0,0,0,0.6);
+  --primary-3:#0E2A3D;--alert-2:#3D1A1A;
+  --ev-high-bg:#0F3A2E;--ev-med-bg:#3D2D0E;--ev-low-bg:#1F2A3D;--ev-mixed-bg:#2A1F3D;
+}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--ink);font-size:15px;line-height:1.6;min-height:100vh;-webkit-font-smoothing:antialiased}
+
+/* ============ SCROLL PROGRESS ============ */
+.scroll-progress{position:fixed;top:0;left:0;height:2px;background:var(--primary);width:0;z-index:1500;transition:width 50ms linear}
+
+/* ============ HEADER ============ */
+.header{position:sticky;top:0;background:var(--surface);border-bottom:1px solid var(--border);z-index:200;backdrop-filter:saturate(180%) blur(8px)}
+.header-inner{max-width:1280px;margin:0 auto;padding:0 24px;display:flex;align-items:center;gap:20px;height:60px}
+.logo{font-family:'Source Serif Pro',serif;font-weight:700;font-size:18px;color:var(--primary);text-decoration:none;flex-shrink:0;display:flex;align-items:center;gap:8px}
+.logo-mark{width:24px;height:24px;background:var(--primary);border-radius:50%;display:inline-flex;align-items:center;justify-content:center;color:#fff;font-size:13px;font-weight:700;font-family:'Inter',sans-serif}
+.search{flex:1;max-width:480px;position:relative}
+.search input{width:100%;padding:9px 14px 9px 38px;background:var(--surface-alt);border:1px solid var(--border);border-radius:var(--r-md);font-family:inherit;font-size:14px;color:var(--ink);outline:none;transition:all 0.15s}
+.search input:focus{border-color:var(--primary);background:var(--surface);box-shadow:0 0 0 3px rgba(13,115,119,0.1)}
+.search-icon{position:absolute;left:12px;top:50%;transform:translateY(-50%);color:var(--ink-3);width:16px;height:16px}
+.nav{display:flex;gap:4px;align-items:center}
+.nav a{padding:8px 12px;font-size:13.5px;font-weight:500;color:var(--ink-2);text-decoration:none;border-radius:var(--r-sm);transition:all 0.15s}
+.nav a:hover{background:var(--surface-alt);color:var(--ink)}
+.theme-toggle{background:none;border:1px solid var(--border);width:36px;height:36px;border-radius:var(--r-md);cursor:pointer;display:flex;align-items:center;justify-content:center;color:var(--ink-2);transition:all 0.15s}
+.theme-toggle:hover{border-color:var(--primary);color:var(--primary)}
+.menu-toggle{display:none;background:none;border:1px solid var(--border);width:36px;height:36px;border-radius:var(--r-md);cursor:pointer;align-items:center;justify-content:center;color:var(--ink-2)}
+
+/* ============ HERO ============ */
+.hero{max-width:1280px;margin:0 auto;padding:64px 24px 32px}
+.hero-eyebrow{display:inline-block;font-size:11px;font-weight:600;color:var(--primary);background:var(--primary-3);padding:4px 10px;border-radius:20px;letter-spacing:0.05em;text-transform:uppercase;margin-bottom:18px}
+.hero-title{font-family:'Source Serif Pro',serif;font-size:clamp(32px,5vw,52px);font-weight:700;line-height:1.1;letter-spacing:-0.02em;color:var(--ink);margin-bottom:14px;max-width:760px}
+.hero-sub{font-size:17px;color:var(--ink-2);max-width:680px;margin-bottom:28px;line-height:1.55}
+.hero-cta-row{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:48px}
+.btn{padding:11px 20px;border-radius:var(--r-md);font-family:inherit;font-size:14px;font-weight:600;cursor:pointer;border:1px solid transparent;transition:all 0.15s;display:inline-flex;align-items:center;gap:8px;text-decoration:none}
+.btn-primary{background:var(--primary);color:#fff;border-color:var(--primary)}
+.btn-primary:hover{background:var(--primary-2);transform:translateY(-1px);box-shadow:var(--shadow-2)}
+.btn-ghost{background:var(--surface);color:var(--ink);border-color:var(--border)}
+.btn-ghost:hover{border-color:var(--primary);color:var(--primary)}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px}
+.stat{background:var(--surface);border:1px solid var(--border);border-radius:var(--r-lg);padding:20px 22px;box-shadow:var(--shadow);transition:all 0.2s}
+.stat:hover{transform:translateY(-2px);box-shadow:var(--shadow-2);border-color:var(--primary-3)}
+.stat-num{font-family:'Source Serif Pro',serif;font-size:34px;font-weight:700;color:var(--primary);line-height:1.1;display:block;margin-bottom:6px}
+.stat-label{font-size:13px;color:var(--ink-2);line-height:1.4}
+.stat-source{font-size:11px;color:var(--ink-4);margin-top:8px;font-style:italic}
+
+/* ============ MAIN LAYOUT ============ */
+.main{max-width:1280px;margin:0 auto;padding:24px 24px 120px}
+.section-title{font-family:'Source Serif Pro',serif;font-size:28px;font-weight:700;color:var(--ink);margin-bottom:8px;letter-spacing:-0.01em}
+.section-sub{font-size:14px;color:var(--ink-3);margin-bottom:24px;max-width:680px}
+.catalog{display:grid;grid-template-columns:260px 1fr;gap:32px;margin-top:32px}
+
+/* ============ FILTERS ============ */
+.filter-toggle-mobile{display:none;width:100%;padding:12px;background:var(--surface);border:1px solid var(--border);border-radius:var(--r-md);font-family:inherit;font-weight:600;font-size:14px;color:var(--ink);margin-bottom:16px;cursor:pointer}
+.filters{position:sticky;top:80px;align-self:start;max-height:calc(100vh - 100px);overflow-y:auto;padding-right:8px}
+.filter-group{margin-bottom:22px}
+.filter-label{font-size:11px;font-weight:700;color:var(--ink-3);letter-spacing:0.07em;text-transform:uppercase;margin-bottom:10px;display:flex;align-items:center;justify-content:space-between}
+.filter-clear{font-size:11px;color:var(--primary);background:none;border:none;cursor:pointer;font-family:inherit;font-weight:500;text-transform:none;letter-spacing:0}
+.filter-pills{display:flex;flex-wrap:wrap;gap:6px}
+.filter-pill{padding:6px 12px;background:var(--surface);border:1px solid var(--border);border-radius:20px;font-size:12px;color:var(--ink-2);cursor:pointer;transition:all 0.15s;font-family:inherit}
+.filter-pill:hover{border-color:var(--primary);color:var(--primary)}
+.filter-pill.active{background:var(--primary);color:#fff;border-color:var(--primary)}
+.range-input{width:100%;margin:8px 0}
+.range-display{font-size:12px;color:var(--ink-3);font-variant-numeric:tabular-nums}
+
+/* ============ PRODUCT CARDS ============ */
+.products-toolbar{display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;gap:12px;flex-wrap:wrap}
+.products-count{font-size:13px;color:var(--ink-3)}
+.sort-select{padding:7px 28px 7px 12px;background:var(--surface);border:1px solid var(--border);border-radius:var(--r-md);font-family:inherit;font-size:13px;color:var(--ink);cursor:pointer;appearance:none;background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%236B7280' stroke-width='2'><polyline points='6 9 12 15 18 9'/></svg>");background-repeat:no-repeat;background-position:right 8px center}
+.products-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:16px}
+.card{background:var(--surface);border:1px solid var(--border);border-radius:var(--r-lg);padding:20px;cursor:pointer;transition:all 0.2s;position:relative;display:flex;flex-direction:column;gap:12px}
+.card:hover{transform:translateY(-2px);box-shadow:var(--shadow-2);border-color:var(--primary-3)}
+.card-header{display:flex;justify-content:space-between;align-items:flex-start;gap:8px}
+.card-cat{display:inline-block;font-size:10px;font-weight:600;letter-spacing:0.05em;text-transform:uppercase;padding:3px 9px;border-radius:20px;background:var(--surface-alt);color:var(--ink-3)}
+.card-cat.clinical{background:var(--ev-high-bg);color:var(--ev-high)}
+.card-cat.global{background:#DBEAFE;color:#1E40AF}
+.card-cat.indian{background:#EDE9FE;color:#6D28D9}
+.card-cat.mass{background:#FEF3C7;color:#92400E}
+.card-cat.traditional{background:#F3F4F6;color:#374151}
+[data-theme="dark"] .card-cat.global{background:#172A4F;color:#93C5FD}
+[data-theme="dark"] .card-cat.indian{background:#2A1F3D;color:#C4B5FD}
+[data-theme="dark"] .card-cat.mass{background:#3D2D0E;color:#FCD34D}
+[data-theme="dark"] .card-cat.traditional{background:#1F2A3D;color:#9CA3AF}
+.card-checkbox{position:absolute;top:14px;right:14px;width:20px;height:20px;border:2px solid var(--border-2);border-radius:5px;cursor:pointer;display:flex;align-items:center;justify-content:center;background:var(--surface);transition:all 0.15s;z-index:5}
+.card-checkbox:hover{border-color:var(--primary)}
+.card-checkbox.checked{background:var(--primary);border-color:var(--primary)}
+.card-checkbox.checked::after{content:"✓";color:#fff;font-size:12px;font-weight:700}
+.card-name{font-family:'Source Serif Pro',serif;font-size:18px;font-weight:700;color:var(--ink);line-height:1.2;padding-right:30px}
+.card-origin{font-size:11.5px;color:var(--ink-3);margin-top:2px}
+.card-bars{display:flex;flex-direction:column;gap:8px}
+.bar-row{display:grid;grid-template-columns:32px 1fr 60px;gap:8px;align-items:center;font-size:12px}
+.bar-label{font-weight:600;color:var(--ink-2);font-variant-numeric:tabular-nums}
+.bar-track{height:6px;background:var(--surface-alt);border-radius:3px;overflow:hidden;position:relative}
+.bar-fill{height:100%;background:var(--primary);border-radius:3px;transition:width 0.4s ease-out}
+.bar-fill.low{background:var(--ev-low)}
+.bar-fill.med{background:var(--ev-med)}
+.bar-fill.high{background:var(--ev-high)}
+.bar-fill.gap{background:var(--alert)}
+.bar-val{font-variant-numeric:tabular-nums;color:var(--ink-2);text-align:right;font-weight:500}
+.card-badges{display:flex;gap:6px;flex-wrap:wrap}
+.badge{display:inline-flex;align-items:center;gap:4px;padding:3px 9px;border-radius:20px;font-size:11px;font-weight:600;font-variant-numeric:tabular-nums;letter-spacing:0.02em}
+.badge.high{background:var(--ev-high-bg);color:var(--ev-high)}
+.badge.med{background:var(--ev-med-bg);color:var(--ev-med)}
+.badge.low{background:var(--ev-low-bg);color:var(--ev-low)}
+.badge.mixed{background:var(--ev-mixed-bg);color:var(--ev-mixed)}
+.badge.alert{background:var(--alert-2);color:var(--alert)}
+.badge.tonicity{background:var(--surface-alt);color:var(--ink-2)}
+@keyframes pulse-ev{0%,100%{opacity:1}50%{opacity:0.85}}
+.badge.high{animation:pulse-ev 5s ease-in-out infinite}
+.card-best{font-size:12.5px;color:var(--ink-2);line-height:1.45;padding-top:10px;border-top:1px solid var(--border)}
+.card-best strong{color:var(--ink);font-weight:600}
+.mg-flag{display:inline-flex;align-items:center;gap:4px;color:var(--alert);font-size:11px;font-weight:600;cursor:help;position:relative}
+
+/* ============ COMPARE BAR ============ */
+.compare-bar{position:fixed;bottom:88px;left:50%;transform:translateX(-50%);background:var(--ink);color:#fff;padding:10px 16px 10px 20px;border-radius:30px;display:none;align-items:center;gap:14px;box-shadow:var(--shadow-3);z-index:300;animation:slideUp 0.3s ease-out;max-width:90vw}
+.compare-bar.show{display:flex}
+@keyframes slideUp{from{transform:translate(-50%,40px);opacity:0}to{transform:translate(-50%,0);opacity:1}}
+.compare-text{font-size:13px;font-weight:500}
+.compare-count{font-weight:700;color:var(--primary-3)}
+.compare-go{background:var(--primary);color:#fff;border:none;padding:7px 14px;border-radius:20px;font-family:inherit;font-weight:600;font-size:13px;cursor:pointer}
+.compare-go:hover{background:var(--primary-2)}
+.compare-clear{background:none;border:none;color:var(--ink-4);cursor:pointer;font-size:16px;padding:0 4px}
+
+/* ============ MODAL ============ */
+.modal-backdrop{position:fixed;inset:0;background:rgba(0,0,0,0.45);backdrop-filter:blur(2px);z-index:1000;display:none;align-items:center;justify-content:center;padding:20px;animation:fadeIn 0.15s ease-out}
+.modal-backdrop.show{display:flex}
+@keyframes fadeIn{from{opacity:0}to{opacity:1}}
+@keyframes scaleIn{from{transform:scale(0.95);opacity:0}to{transform:scale(1);opacity:1}}
+.modal{background:var(--surface);border-radius:var(--r-xl);max-width:720px;width:100%;max-height:90vh;overflow-y:auto;box-shadow:var(--shadow-3);animation:scaleIn 0.2s ease-out;border:1px solid var(--border)}
+.modal-large{max-width:1100px}
+.modal-head{display:flex;justify-content:space-between;align-items:flex-start;padding:24px 28px 0;gap:16px}
+.modal-title{font-family:'Source Serif Pro',serif;font-size:22px;font-weight:700;color:var(--ink);line-height:1.2}
+.modal-sub{font-size:13px;color:var(--ink-3);margin-top:4px}
+.modal-close{background:none;border:1px solid var(--border);width:32px;height:32px;border-radius:50%;cursor:pointer;color:var(--ink-3);font-size:18px;flex-shrink:0;display:flex;align-items:center;justify-content:center;line-height:1;transition:all 0.15s}
+.modal-close:hover{border-color:var(--alert);color:var(--alert)}
+.modal-body{padding:20px 28px 28px}
+
+/* ============ MODAL DETAIL CONTENT ============ */
+.detail-section{margin-bottom:20px}
+.detail-section-title{font-size:11px;font-weight:700;color:var(--ink-3);letter-spacing:0.07em;text-transform:uppercase;margin-bottom:8px}
+.nutrient-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:8px}
+.nutrient-cell{background:var(--surface-alt);border-radius:var(--r-md);padding:10px 12px}
+.nutrient-cell-val{font-family:'Source Serif Pro',serif;font-size:18px;font-weight:700;color:var(--ink);line-height:1.1;margin-bottom:2px}
+.nutrient-cell-label{font-size:11px;color:var(--ink-3);text-transform:uppercase;letter-spacing:0.05em}
+.detail-text{font-size:14px;color:var(--ink-2);line-height:1.65}
+.detail-text strong{color:var(--ink);font-weight:600}
+.alert-box{background:var(--alert-2);border:1px solid var(--alert);border-left:3px solid var(--alert);border-radius:var(--r-md);padding:12px 16px;font-size:13px;color:var(--alert);line-height:1.55;margin-top:8px}
+.alert-box strong{font-weight:700}
+
+/* ============ HYDRATION MATCHER ============ */
+.matcher-progress{display:flex;justify-content:center;align-items:center;gap:8px;padding:16px 0 0}
+.matcher-dot{width:8px;height:8px;border-radius:50%;background:var(--border-2);transition:all 0.2s}
+.matcher-dot.active{background:var(--primary);width:24px;border-radius:4px}
+.matcher-dot.done{background:var(--primary)}
+.matcher-step{padding:24px 28px}
+.matcher-step h3{font-family:'Source Serif Pro',serif;font-size:20px;margin-bottom:6px}
+.matcher-step .matcher-help{font-size:13px;color:var(--ink-3);margin-bottom:18px}
+.situation-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:10px}
+.situation-card{background:var(--surface);border:2px solid var(--border);border-radius:var(--r-lg);padding:18px 16px;cursor:pointer;transition:all 0.2s;text-align:center}
+.situation-card:hover{border-color:var(--primary);transform:translateY(-2px);box-shadow:var(--shadow-2)}
+.situation-card.selected{border-color:var(--primary);background:var(--primary-3)}
+.situation-icon{font-size:28px;margin-bottom:8px;line-height:1}
+.situation-name{font-weight:600;font-size:14px;color:var(--ink);line-height:1.3}
+.constraint-pills{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:24px}
+.constraint-pill{padding:8px 14px;border:1.5px solid var(--border);border-radius:24px;background:var(--surface);cursor:pointer;font-size:13px;color:var(--ink-2);transition:all 0.15s;font-family:inherit}
+.constraint-pill:hover{border-color:var(--primary)}
+.constraint-pill.selected{background:var(--primary);color:#fff;border-color:var(--primary)}
+.duration-slider{margin:24px 0}
+.matcher-actions{display:flex;justify-content:space-between;gap:12px;margin-top:24px;padding-top:20px;border-top:1px solid var(--border)}
+.match-result{background:var(--surface-alt);border:1px solid var(--border);border-radius:var(--r-lg);padding:16px;margin-bottom:12px}
+.match-rank{display:inline-flex;align-items:center;justify-content:center;width:24px;height:24px;border-radius:50%;background:var(--primary);color:#fff;font-size:12px;font-weight:700;margin-right:10px;flex-shrink:0}
+.match-name{font-family:'Source Serif Pro',serif;font-size:17px;font-weight:700;color:var(--ink);display:flex;align-items:center;margin-bottom:8px}
+.match-why{font-size:13.5px;color:var(--ink-2);line-height:1.6;margin-bottom:8px}
+.match-why strong{color:var(--ink)}
+.match-stats{display:flex;gap:8px;flex-wrap:wrap;font-size:11.5px}
+.match-stats span{background:var(--surface);padding:2px 8px;border-radius:4px;color:var(--ink-3);border:1px solid var(--border);font-variant-numeric:tabular-nums}
+
+/* ============ COMPARISON ============ */
+.compare-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;margin-bottom:20px}
+.compare-col{background:var(--surface-alt);border-radius:var(--r-lg);padding:16px;border:1px solid var(--border)}
+.compare-col-name{font-family:'Source Serif Pro',serif;font-size:16px;font-weight:700;color:var(--ink);margin-bottom:10px;line-height:1.3}
+.compare-row{display:grid;grid-template-columns:90px 1fr;font-size:12.5px;padding:8px 0;border-bottom:1px solid var(--border);align-items:center}
+.compare-row:last-child{border-bottom:none}
+.compare-key{color:var(--ink-3);font-size:11px;text-transform:uppercase;letter-spacing:0.04em;font-weight:600}
+.compare-val{font-weight:500;color:var(--ink);font-variant-numeric:tabular-nums}
+.compare-narration{background:var(--primary-3);border-left:3px solid var(--primary);border-radius:var(--r-md);padding:12px 16px;font-size:13.5px;color:var(--primary);line-height:1.55;margin-top:16px}
+.compare-narration strong{color:var(--ink);font-weight:700}
+[data-theme="dark"] .compare-narration{color:var(--ink-2)}
+.cost-calc{margin-top:20px;padding:16px;background:var(--surface-alt);border:1px solid var(--border);border-radius:var(--r-lg)}
+.cost-calc-title{font-size:12px;font-weight:700;color:var(--ink-3);text-transform:uppercase;letter-spacing:0.06em;margin-bottom:12px}
+.cost-row{display:grid;grid-template-columns:1fr 100px 100px;gap:10px;align-items:center;margin-bottom:8px;font-size:13px}
+.cost-row input{padding:6px 10px;background:var(--surface);border:1px solid var(--border);border-radius:var(--r-sm);font-family:inherit;font-size:13px;color:var(--ink);width:100%;font-variant-numeric:tabular-nums}
+.cost-result{font-weight:700;color:var(--primary);font-variant-numeric:tabular-nums}
+
+/* ============ LAYMAN MODE ============ */
+.lay-callout{background:linear-gradient(135deg,var(--primary-3) 0%,#FFF8E7 100%);border:1px solid var(--ev-med);border-left:3px solid var(--primary);border-radius:var(--r-md);padding:12px 16px;margin:10px 0;font-size:13.5px;color:var(--ink);line-height:1.6;display:flex;gap:10px;align-items:flex-start}
+.lay-callout-icon{flex-shrink:0;font-size:16px;line-height:1.4;color:var(--ev-med)}
+.lay-callout-body{flex:1}
+.lay-callout-label{display:block;font-size:10px;font-weight:700;color:var(--ev-med);letter-spacing:0.08em;text-transform:uppercase;margin-bottom:4px}
+.lay-callout-text{color:var(--ink-2)}
+.lay-callout-text em{color:var(--ink);font-style:italic;font-weight:500}
+[data-theme="dark"] .lay-callout{background:linear-gradient(135deg,var(--primary-3) 0%,#3D2D0E 100%)}
+.term{border-bottom:1px dotted var(--ink-3);cursor:help;position:relative;color:inherit;text-decoration:none}
+.term::after{content:attr(data-def);position:absolute;bottom:calc(100% + 8px);left:0;transform:translateX(-10%);background:var(--ink);color:#fff;padding:10px 14px;border-radius:6px;font-size:12px;line-height:1.5;font-weight:400;letter-spacing:normal;text-transform:none;font-family:'Inter',sans-serif;font-style:normal;width:280px;box-shadow:0 6px 20px rgba(0,0,0,0.25);z-index:30;pointer-events:none;opacity:0;visibility:hidden;transition:opacity 0.15s ease}
+.term::before{content:"";position:absolute;bottom:calc(100% + 2px);left:14px;border:6px solid transparent;border-top-color:var(--ink);z-index:31;pointer-events:none;opacity:0;visibility:hidden;transition:opacity 0.15s ease}
+.term:hover::after,.term:hover::before,.term.tap::after,.term.tap::before{opacity:1;visibility:visible}
+@media (max-width:560px){
+  .term::after{width:240px;left:50%;transform:translateX(-50%)}
+  .term::before{left:50%;margin-left:-6px}
+}
+
+/* ============ PATHWAYS / SCIENCE ============ */
+.fw-tabs{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:20px;padding-bottom:14px;border-bottom:1px solid var(--border)}
+.fw-tab{padding:9px 16px;background:var(--surface);border:1px solid var(--border);border-radius:var(--r-md);font-family:inherit;font-size:12.5px;font-weight:600;color:var(--ink-2);cursor:pointer;transition:all 0.15s;letter-spacing:0.01em}
+.fw-tab:hover{border-color:var(--primary);color:var(--primary)}
+.fw-tab.active{background:var(--primary);border-color:var(--primary);color:#fff}
+.fw-tab.fw-tab-score{border-color:var(--ev-mixed);color:var(--ev-mixed)}
+.fw-tab.fw-tab-score.active{background:var(--ev-mixed);color:#fff;border-color:var(--ev-mixed)}
+.fw-intro{background:var(--primary-3);border:1px solid var(--primary);border-left:3px solid var(--primary);border-radius:var(--r-md);padding:14px 18px;font-size:13.5px;color:var(--primary);line-height:1.55;margin-bottom:18px}
+[data-theme="dark"] .fw-intro{color:var(--ink-2)}
+.fw-intro strong{font-weight:700}
+.fw-table{background:var(--surface);border:1px solid var(--border);border-radius:var(--r-lg);overflow:hidden;margin-bottom:18px}
+.fw-row-hdr{display:grid;grid-template-columns:1fr 220px 80px 60px;padding:12px 18px;background:var(--surface-alt);border-bottom:1px solid var(--border);font-size:10px;font-weight:700;color:var(--ink-3);letter-spacing:0.07em;text-transform:uppercase;gap:10px}
+.fw-row{display:grid;grid-template-columns:1fr 220px 80px 60px;padding:14px 18px;border-bottom:1px solid var(--border);align-items:start;gap:10px}
+.fw-row:last-child{border-bottom:none}
+.fw-row-name{font-size:14px;font-weight:600;color:var(--ink);margin-bottom:4px}
+.fw-row-desc{font-size:12.5px;color:var(--ink-2);line-height:1.55;margin-bottom:8px}
+.fw-row-clinical{font-size:12px;color:var(--primary);background:var(--primary-3);border-radius:var(--r-sm);padding:6px 10px;line-height:1.5}
+[data-theme="dark"] .fw-row-clinical{color:var(--ink-2)}
+.fw-row-clinical strong{font-weight:700;color:var(--ink)}
+.fw-row-keys{font-size:12px;color:var(--ink-2);font-family:'JetBrains Mono','SF Mono',monospace;line-height:1.5}
+.fw-row-wt{font-family:'Source Serif Pro',serif;font-size:18px;font-weight:700;color:var(--ink-3);text-align:right}
+.fw-chips-wrap{margin-top:14px;padding:14px 18px;background:var(--surface);border:1px solid var(--border);border-radius:var(--r-lg)}
+.fw-chips-title{font-size:11px;font-weight:700;color:var(--ink-3);letter-spacing:0.07em;text-transform:uppercase;margin-bottom:12px}
+.fw-chip-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:8px}
+.fw-chip{background:var(--surface-alt);border:1px solid var(--border);border-radius:var(--r-md);padding:10px 12px;text-align:center}
+.fw-chip-val{font-family:'Source Serif Pro',serif;font-size:18px;font-weight:700;color:var(--ink);display:block;line-height:1.1}
+.fw-chip-bar{width:100%;background:var(--border);border-radius:2px;height:4px;margin:5px 0;overflow:hidden}
+.fw-chip-bar-fill{height:100%;border-radius:2px;transition:width 0.5s ease-out}
+.fw-chip-name{font-size:12px;font-weight:600;color:var(--ink-2);display:block;margin-top:2px}
+.fw-chip-cat{font-size:10px;color:var(--ink-4);display:block;margin-top:1px}
+.fw-score-table{width:100%;border-collapse:collapse;background:var(--surface);border:1px solid var(--border);border-radius:var(--r-lg);overflow:hidden}
+.fw-score-table th{padding:11px 14px;font-size:10px;font-weight:700;color:var(--ink-3);text-transform:uppercase;letter-spacing:0.07em;text-align:left;background:var(--surface-alt);border-bottom:1px solid var(--border);white-space:nowrap}
+.fw-score-table td{padding:11px 14px;font-size:13px;border-bottom:1px solid var(--border);font-variant-numeric:tabular-nums}
+.fw-score-table tr:last-child td{border-bottom:none}
+.fw-score-comp{font-family:'Source Serif Pro',serif;font-size:16px;font-weight:700}
+.fw-score-comp.high{color:var(--ev-high)}
+.fw-score-comp.med{color:var(--ev-med)}
+.fw-score-comp.low{color:var(--alert)}
+.fw-ref-row{display:grid;grid-template-columns:1fr 240px;padding:14px 18px;border-bottom:1px solid var(--border);gap:14px}
+.fw-ref-row:last-child{border-bottom:none}
+.science-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.science-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--r-lg);padding:22px}
+.science-title{font-family:'Source Serif Pro',serif;font-size:18px;font-weight:700;color:var(--ink);margin-bottom:10px;padding-bottom:8px;border-bottom:2px solid var(--primary);display:inline-block}
+.science-body{font-size:13.5px;color:var(--ink-2);line-height:1.7}
+.science-body strong{color:var(--ink);font-weight:600}
+.science-body p{margin-bottom:8px}
+@media (max-width:900px){
+  .fw-row,.fw-row-hdr{grid-template-columns:1fr;gap:8px}
+  .fw-row-hdr div:not(:first-child){display:none}
+  .fw-row-keys{font-size:11px}
+  .fw-row-wt{text-align:left;font-size:13px}
+  .fw-row-wt::before{content:"Weight: "}
+  .science-grid{grid-template-columns:1fr}
+  .fw-score-table{font-size:11px}
+  .fw-score-table th,.fw-score-table td{padding:8px 10px}
+}
+
+/* ============ INDIA DASHBOARD ============ */
+.india-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:20px}
+.india-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--r-lg);padding:20px;box-shadow:var(--shadow)}
+.india-card-title{font-size:11px;font-weight:700;color:var(--ink-3);letter-spacing:0.07em;text-transform:uppercase;margin-bottom:12px}
+.wbgt-display{display:flex;align-items:baseline;gap:8px;margin-bottom:8px}
+.wbgt-num{font-family:'Source Serif Pro',serif;font-size:42px;font-weight:700;line-height:1}
+.wbgt-unit{font-size:14px;color:var(--ink-3);font-weight:600}
+.wbgt-label{font-size:13px;font-weight:600;margin-bottom:8px}
+.wbgt-low{color:var(--ev-high)}
+.wbgt-med{color:var(--ev-med)}
+.wbgt-high{color:var(--alert)}
+.wbgt-extreme{color:var(--alert);font-weight:700}
+.wbgt-bar{height:6px;background:var(--surface-alt);border-radius:3px;overflow:hidden;margin:10px 0}
+.wbgt-bar-fill{height:100%;border-radius:3px;transition:width 0.4s}
+.recommend-list{font-size:13px;color:var(--ink-2);line-height:1.7}
+.recommend-list li{margin-bottom:6px;padding-left:16px;position:relative}
+.recommend-list li::before{content:"→";position:absolute;left:0;color:var(--primary);font-weight:700}
+.city-select{padding:8px 12px;background:var(--surface);border:1px solid var(--border);border-radius:var(--r-md);font-family:inherit;font-size:14px;color:var(--ink);cursor:pointer;width:200px;margin-bottom:16px}
+.regulatory-list{display:flex;flex-direction:column;gap:10px;font-size:13px}
+.regulatory-item{display:flex;align-items:center;gap:10px;padding:8px 0}
+.reg-icon{width:20px;height:20px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;flex-shrink:0;color:#fff}
+.reg-icon.ok{background:var(--ev-high)}
+.reg-icon.warn{background:var(--ev-med)}
+.reg-icon.alert{background:var(--alert)}
+
+/* ============ Q&A WIDGET ============ */
+.qa-widget{position:fixed;bottom:0;left:0;right:0;background:var(--surface);border-top:1px solid var(--border);box-shadow:0 -2px 12px rgba(0,0,0,0.06);z-index:400;transition:all 0.25s cubic-bezier(0.4,0,0.2,1)}
+.qa-bar{max-width:1280px;margin:0 auto;padding:14px 24px;display:flex;gap:10px;align-items:center}
+.qa-input{flex:1;padding:11px 16px;background:var(--surface-alt);border:1px solid var(--border);border-radius:24px;font-family:inherit;font-size:14px;color:var(--ink);outline:none;transition:all 0.15s}
+.qa-input:focus{border-color:var(--primary);background:var(--surface);box-shadow:0 0 0 3px rgba(13,115,119,0.1)}
+.qa-send{background:var(--primary);color:#fff;border:none;border-radius:50%;width:40px;height:40px;cursor:pointer;display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:all 0.15s}
+.qa-send:hover{background:var(--primary-2);transform:scale(1.05)}
+.qa-send:disabled{background:var(--ink-4);cursor:not-allowed;transform:none}
+.qa-paper-btn{background:var(--surface);color:var(--ink-2);border:1px solid var(--border);border-radius:50%;width:40px;height:40px;cursor:pointer;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:16px;transition:all 0.15s}
+.qa-paper-btn:hover{border-color:var(--primary);color:var(--primary)}
+.qa-suggestions{padding:0 24px 12px;max-width:1280px;margin:0 auto;display:none;flex-wrap:wrap;gap:8px}
+.qa-widget.expanded .qa-suggestions{display:flex}
+.qa-suggest-btn{padding:6px 12px;background:var(--surface-alt);border:1px solid var(--border);border-radius:20px;font-size:12px;color:var(--ink-2);cursor:pointer;font-family:inherit;transition:all 0.15s}
+.qa-suggest-btn:hover{border-color:var(--primary);color:var(--primary)}
+
+/* Chat overlay (when expanded for full conversation) */
+.chat-overlay{position:fixed;bottom:80px;right:24px;width:420px;max-width:calc(100vw - 32px);height:60vh;max-height:560px;background:var(--surface);border:1px solid var(--border);border-radius:var(--r-lg);box-shadow:var(--shadow-3);z-index:401;display:none;flex-direction:column;overflow:hidden;transition:width 0.25s ease,height 0.25s ease,max-width 0.25s ease,max-height 0.25s ease,bottom 0.25s ease,right 0.25s ease}
+.chat-overlay.show{display:flex}
+.chat-overlay.maximized{width:90vw;max-width:1100px;height:85vh;max-height:none;right:5vw;bottom:80px}
+@media (min-width:1100px){.chat-overlay.maximized{right:calc(50vw - 550px)}}
+.chat-overlay-head{padding:14px 18px;background:var(--ink);color:#fff;display:flex;justify-content:space-between;align-items:center;gap:10px}
+.chat-overlay-actions{display:flex;align-items:center;gap:6px}
+.chat-overlay-btn{background:none;border:1px solid rgba(255,255,255,0.2);width:28px;height:28px;border-radius:6px;cursor:pointer;color:#fff;display:flex;align-items:center;justify-content:center;transition:background 0.15s;padding:0}
+.chat-overlay-btn:hover{background:rgba(255,255,255,0.1)}
+.chat-overlay-btn svg{width:14px;height:14px}
+.chat-overlay-title{font-size:12px;font-weight:700;letter-spacing:0.05em;text-transform:uppercase}
+.chat-overlay-body{flex:1;overflow-y:auto;padding:14px 16px;display:flex;flex-direction:column;gap:8px;background:var(--bg)}
+.chat-msg{padding:9px 14px;border-radius:var(--r-md);font-size:13.5px;line-height:1.55;max-width:88%}
+.chat-msg.user{background:var(--primary);color:#fff;align-self:flex-end;border-bottom-right-radius:2px}
+.chat-msg.bot{background:var(--surface);color:var(--ink);border:1px solid var(--border);align-self:flex-start;border-bottom-left-radius:2px}
+.chat-msg.bot h1,.chat-msg.bot h2,.chat-msg.bot h3{font-family:'Source Serif Pro',serif;color:var(--primary);margin:6px 0 4px}
+.chat-msg.bot h3{font-size:14px}
+.chat-msg.bot ul,.chat-msg.bot ol{margin:6px 0 6px 20px}
+.chat-msg.bot p{margin-bottom:6px}
+.chat-msg.bot strong{color:var(--ink);font-weight:600}
+.typing{align-self:flex-start;color:var(--ink-3);font-size:12px;font-style:italic;padding:6px 14px}
+
+/* ============ PAPER MODAL ============ */
+.paper-input-row{padding:14px 24px;border-bottom:1px solid var(--border);display:flex;gap:10px;align-items:center}
+.paper-input{flex:1;padding:10px 14px;background:var(--surface-alt);border:1px solid var(--border);border-radius:var(--r-md);font-family:inherit;font-size:14px;color:var(--ink);outline:none}
+.paper-input:focus{border-color:var(--primary);background:var(--surface)}
+.paper-body-content{padding:32px 48px;font-size:14px;line-height:1.7;color:var(--ink-2);max-height:60vh;overflow-y:auto}
+.paper-body-content h1{font-family:'Source Serif Pro',serif;font-size:24px;color:var(--ink);margin:8px 0 16px;line-height:1.25}
+.paper-body-content h2{font-family:'Source Serif Pro',serif;font-size:15px;color:var(--ink);margin:24px 0 8px;padding-bottom:5px;border-bottom:1px solid var(--border);text-transform:uppercase;letter-spacing:0.05em}
+.paper-body-content h3{font-family:'Source Serif Pro',serif;font-size:13px;color:var(--ink);margin:14px 0 6px}
+.paper-body-content p{margin-bottom:12px}
+.paper-body-content ul,.paper-body-content ol{margin:8px 0 12px 22px}
+.paper-body-content li{margin-bottom:5px}
+.paper-body-content strong{color:var(--ink);font-weight:600}
+.paper-body-content hr{border:none;border-top:1px solid var(--border);margin:18px 0}
+.paper-empty{display:flex;flex-direction:column;align-items:center;justify-content:center;padding:48px 24px;text-align:center;color:var(--ink-3);min-height:300px}
+.paper-empty-icon{font-size:42px;margin-bottom:12px}
+.paper-empty-title{font-family:'Source Serif Pro',serif;font-size:16px;color:var(--ink-2);margin-bottom:6px}
+.paper-suggest{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:18px;width:100%;max-width:520px}
+.paper-suggest-btn{padding:10px 14px;background:var(--surface);border:1px solid var(--border);border-radius:var(--r-md);font-size:12px;color:var(--ink-2);cursor:pointer;text-align:left;line-height:1.4;font-family:inherit;transition:all 0.15s}
+.paper-suggest-btn:hover{border-color:var(--primary);color:var(--ink)}
+.paper-loading{padding:32px;text-align:center;color:var(--ink-3);font-style:italic}
+.paper-actions{padding:12px 24px;border-top:1px solid var(--border);display:flex;gap:8px;justify-content:flex-end}
+
+/* ============ FOOTER ============ */
+.footer{max-width:1280px;margin:40px auto 0;padding:32px 24px;border-top:1px solid var(--border);font-size:13px;color:var(--ink-3);line-height:1.6}
+.footer-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:24px;margin-bottom:20px}
+.footer-col strong{display:block;color:var(--ink-2);font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:0.06em;margin-bottom:8px}
+.footer-bottom{font-size:11px;color:var(--ink-4);padding-top:16px;border-top:1px solid var(--border)}
+
+/* ============ MOBILE ============ */
+@media (max-width:900px){
+  .header-inner{padding:0 16px;gap:12px;height:56px}
+  .nav{display:none}
+  .menu-toggle{display:flex}
+  .search{flex:1}
+  .nav.show-mobile{display:flex;position:absolute;top:56px;left:0;right:0;background:var(--surface);flex-direction:column;align-items:stretch;padding:12px;border-bottom:1px solid var(--border);box-shadow:var(--shadow-2)}
+  .nav.show-mobile a{padding:12px 16px;border-radius:var(--r-md)}
+  .hero{padding:32px 16px 16px}
+  .hero-title{font-size:30px}
+  .hero-sub{font-size:15px}
+  .main{padding:16px 16px 140px}
+  .catalog{grid-template-columns:1fr;gap:16px}
+  .filter-toggle-mobile{display:block}
+  .filters{position:fixed;bottom:-100%;left:0;right:0;top:auto;background:var(--surface);max-height:75vh;border-top:1px solid var(--border);border-radius:var(--r-lg) var(--r-lg) 0 0;padding:20px 20px 80px;z-index:500;transition:bottom 0.3s ease-out;box-shadow:var(--shadow-3);overflow-y:auto}
+  .filters.show-mobile{bottom:0}
+  .filters-handle{width:40px;height:4px;background:var(--border-2);border-radius:2px;margin:0 auto 16px;cursor:pointer}
+  .filters-close-btn{position:fixed;bottom:0;left:0;right:0;background:var(--surface);border-top:1px solid var(--border);padding:14px 20px;text-align:center;font-weight:600;color:var(--primary);cursor:pointer;display:none;z-index:501}
+  .filters.show-mobile ~ .filters-close-btn{display:block}
+  .products-grid{grid-template-columns:1fr;gap:12px}
+  .india-grid{grid-template-columns:1fr}
+  .compare-grid{grid-template-columns:1fr;overflow-x:auto;-webkit-overflow-scrolling:touch}
+  .modal{max-height:95vh}
+  .modal-head{padding:18px 20px 0}
+  .modal-body{padding:14px 20px 20px}
+  .compare-bar{bottom:80px;padding:8px 14px}
+  .qa-bar{padding:10px 16px}
+  .chat-overlay{right:8px;left:8px;width:auto;bottom:72px;height:65vh}
+  .footer-grid{grid-template-columns:1fr 1fr}
+  .paper-body-content{padding:20px 24px}
+}
+
+/* ============ PRINT ============ */
+@media print{
+  .header,.qa-widget,.compare-bar,.modal-close,.paper-input-row,.paper-actions,.filters,.filter-toggle-mobile,.menu-toggle,.theme-toggle,.scroll-progress{display:none !important}
+  .modal-backdrop{position:static;background:none}
+  .modal{box-shadow:none;border:none;max-height:none}
+  .paper-body-content{max-height:none;padding:0;overflow:visible}
+  body{background:#fff;color:#000}
+  .card{break-inside:avoid}
+}
+
+/* Visually hidden */
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+
+/* ============ SOURCES & REFERENCES ============ */
+.sources-stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:12px;margin-bottom:28px}
+.src-stat{background:var(--surface);border:1px solid var(--border);border-radius:var(--r-lg);padding:18px 18px;box-shadow:var(--shadow);transition:all 0.2s}
+.src-stat:hover{transform:translateY(-2px);box-shadow:var(--shadow-2);border-color:var(--primary-3)}
+.src-stat-num{font-family:'Source Serif Pro',serif;font-size:30px;font-weight:700;color:var(--primary);line-height:1;display:block;margin-bottom:6px}
+.src-stat-label{font-size:12.5px;color:var(--ink-2);line-height:1.35}
+
+.sources-toolbar{display:flex;flex-direction:column;gap:14px;margin-bottom:18px}
+.sources-search{position:relative;max-width:520px}
+.sources-search input{width:100%;padding:11px 14px 11px 40px;background:var(--surface-alt);border:1px solid var(--border);border-radius:var(--r-md);font-family:inherit;font-size:14px;color:var(--ink);outline:none;transition:all 0.15s}
+.sources-search input:focus{border-color:var(--primary);background:var(--surface);box-shadow:0 0 0 3px rgba(13,115,119,0.1)}
+.sources-search-icon{position:absolute;left:13px;top:50%;transform:translateY(-50%);color:var(--ink-3);width:16px;height:16px}
+.sources-filters{display:flex;flex-wrap:wrap;gap:7px}
+.src-pill{padding:7px 13px;background:var(--surface);border:1px solid var(--border);border-radius:20px;font-size:12.5px;font-weight:500;color:var(--ink-2);cursor:pointer;font-family:inherit;transition:all 0.15s;display:inline-flex;align-items:center;gap:6px}
+.src-pill:hover{border-color:var(--primary);color:var(--primary)}
+.src-pill.active{background:var(--primary);color:#fff;border-color:var(--primary)}
+.src-pill-count{font-size:11px;opacity:0.75;font-variant-numeric:tabular-nums}
+
+.sources-count{font-size:13px;color:var(--ink-3);margin-bottom:14px}
+
+.sources-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(330px,1fr));gap:14px}
+.source-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--r-lg);padding:18px 18px 16px;box-shadow:var(--shadow);transition:all 0.18s;display:flex;flex-direction:column;gap:8px;position:relative}
+.source-card:hover{transform:translateY(-2px);box-shadow:var(--shadow-2);border-color:var(--primary-3)}
+.source-card-head{display:flex;justify-content:space-between;align-items:center;gap:8px}
+.source-type{display:inline-block;font-size:10px;font-weight:600;letter-spacing:0.05em;text-transform:uppercase;padding:3px 9px;border-radius:20px}
+.type-paper{background:var(--ev-high-bg);color:var(--ev-high)}
+.type-meta{background:var(--ev-mixed-bg);color:var(--ev-mixed)}
+.type-guideline{background:#DBEAFE;color:#1E40AF}
+.type-regulatory{background:#FEF3C7;color:#92400E}
+.type-industry{background:#F3F4F6;color:#374151}
+.type-traditional{background:#FDE7E7;color:#9F1239}
+[data-theme="dark"] .type-guideline{background:#172A4F;color:#93C5FD}
+[data-theme="dark"] .type-regulatory{background:#3D2D0E;color:#FCD34D}
+[data-theme="dark"] .type-industry{background:#1F2A3D;color:#9CA3AF}
+[data-theme="dark"] .type-traditional{background:#3D1A1F;color:#FCA5B5}
+.source-year{font-size:11.5px;color:var(--ink-4);font-variant-numeric:tabular-nums;font-weight:500}
+.source-title{font-family:'Source Serif Pro',serif;font-size:15.5px;font-weight:700;color:var(--ink);line-height:1.3;margin:2px 0 0}
+.source-authors{font-size:12.5px;color:var(--ink-3);font-style:italic}
+.source-topics{display:flex;flex-wrap:wrap;gap:5px;margin-top:2px}
+.src-topic{font-size:10.5px;padding:2px 8px;border-radius:12px;background:var(--surface-alt);color:var(--ink-3);font-weight:500}
+.source-ident{font-family:ui-monospace,SFMono-Regular,monospace;font-size:11px;color:var(--primary);background:var(--primary-3);padding:3px 8px;border-radius:4px;align-self:flex-start;letter-spacing:0.02em}
+[data-theme="dark"] .source-ident{background:var(--primary-3);color:#5EEAD4}
+.source-used{font-size:11.5px;color:var(--ink-3);border-top:1px dashed var(--border);padding-top:8px;margin-top:auto;line-height:1.4}
+.source-used strong{color:var(--ink-2);font-weight:600}
+
+.sources-empty{text-align:center;padding:48px 24px;color:var(--ink-3);font-size:14px;grid-column:1/-1;background:var(--surface-alt);border-radius:var(--r-lg)}
+
+.sources-disclaimer{margin-top:24px;padding:16px 18px;background:var(--surface-alt);border-radius:var(--r-md);font-size:12.5px;color:var(--ink-3);line-height:1.55;border-left:3px solid var(--primary)}
+.sources-disclaimer strong{color:var(--ink-2);font-weight:600}
+
+@media (max-width:720px){
+  .sources-grid{grid-template-columns:1fr}
+  .sources-stats{grid-template-columns:repeat(2,1fr)}
+}
+</style>
+</head>
+<body>
+
+<div class="scroll-progress" id="scrollProgress"></div>
+
+<header class="header">
+  <div class="header-inner">
+    <a href="#" class="logo"><span class="logo-mark">H</span><span>Hydration Reference</span></a>
+    <div class="search">
+      <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+      <input type="text" id="searchInput" placeholder="Search products, mechanisms, ingredients…" oninput="onSearch(this.value)">
+    </div>
+    <nav class="nav" id="mainNav">
+      <a href="#hero">Home</a>
+      <a href="#catalog">Catalog</a>
+      <a href="#pathways">Pathways</a>
+      <a href="#science">Science</a>
+      <a href="#" onclick="openMatcher();return false">Find Match</a>
+      <a href="#india">India</a>
+      <a href="#sources">Sources</a>
+    </nav>
+    <button class="theme-toggle" onclick="toggleTheme()" title="Toggle dark mode" aria-label="Toggle dark mode">
+      <svg id="themeIcon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M4.93 4.93l1.41 1.41m11.32 11.32 1.41 1.41M2 12h2m16 0h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+    </button>
+    <button class="menu-toggle" onclick="toggleMobileNav()" aria-label="Menu">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+    </button>
+  </div>
+</header>
+
+<section class="hero" id="hero">
+  <div class="hero-eyebrow">Clinical Reference · Brand-neutral · Updated May 2026</div>
+  <h1 class="hero-title">What does the science actually say about hydration?</h1>
+  <p class="hero-sub">Every commercial electrolyte product, traditional remedy, and clinical solution catalogued side by side. Filter by use case, evidence level, or constraint. Ask anything. Generate research papers on demand.</p>
+  <div class="hero-cta-row">
+    <button class="btn btn-primary" onclick="openMatcher()">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9.663 17h4.673M12 3v1m6.364 1.636-.707.707M21 12h-1M4 12H3m3.343-5.657-.707-.707M16 16a4 4 0 0 0-8 0"/></svg>
+      Find my hydration
+    </button>
+    <a href="#catalog" class="btn btn-ghost">Browse all products</a>
+  </div>
+  <div class="stats" id="stats"></div>
+</section>
+
+<main class="main">
+  <section id="catalog">
+    <div>
+      <h2 class="section-title">Product catalog</h2>
+      <p class="section-sub">30 products across clinical, sports, Indian DTC, and traditional categories. Click any card for full mechanism, evidence, and contraindications. Tick checkboxes on 2-4 cards to compare.</p>
+    </div>
+    <button class="filter-toggle-mobile" onclick="toggleMobileFilters()">
+      <span>⚙</span> Filters & sort
+    </button>
+    <div class="catalog">
+      <aside class="filters" id="filtersPanel">
+        <div class="filters-handle"></div>
+        <div class="filter-group">
+          <div class="filter-label">Evidence level <button class="filter-clear" onclick="clearFilter('evidence')">Clear</button></div>
+          <div class="filter-pills" id="evidenceFilters"></div>
+        </div>
+        <div class="filter-group">
+          <div class="filter-label">Tonicity <button class="filter-clear" onclick="clearFilter('tonicity')">Clear</button></div>
+          <div class="filter-pills" id="tonicityFilters"></div>
+        </div>
+        <div class="filter-group">
+          <div class="filter-label">Sugar <button class="filter-clear" onclick="clearFilter('sugar')">Clear</button></div>
+          <div class="filter-pills" id="sugarFilters"></div>
+        </div>
+        <div class="filter-group">
+          <div class="filter-label">Sodium range</div>
+          <input type="range" min="0" max="4000" step="100" value="4000" class="range-input" id="sodiumRange" oninput="onSodiumRange(this.value)">
+          <div class="range-display"><span id="sodiumLabel">0 – 4000 mg</span></div>
+        </div>
+        <div class="filter-group">
+          <div class="filter-label">Category <button class="filter-clear" onclick="clearFilter('category')">Clear</button></div>
+          <div class="filter-pills" id="categoryFilters"></div>
+        </div>
+        <div class="filter-group">
+          <div class="filter-label">Use case <button class="filter-clear" onclick="clearFilter('use')">Clear</button></div>
+          <div class="filter-pills" id="useFilters"></div>
+        </div>
+        <div class="filter-group">
+          <div class="filter-label">Constraints <button class="filter-clear" onclick="clearFilter('constraint')">Clear</button></div>
+          <div class="filter-pills" id="constraintFilters"></div>
+        </div>
+      </aside>
+      <div>
+        <div class="products-toolbar">
+          <div class="products-count"><span id="productsCount">0</span> products</div>
+          <select class="sort-select" id="sortSelect" onchange="renderProducts()">
+            <option value="default">Default order</option>
+            <option value="na-desc">Sodium (high → low)</option>
+            <option value="na-asc">Sodium (low → high)</option>
+            <option value="mg-desc">Magnesium (high → low)</option>
+            <option value="sugar-asc">Sugar (low → high)</option>
+            <option value="ev-high">Evidence (highest first)</option>
+          </select>
+        </div>
+        <div class="products-grid" id="productsGrid"></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="pathways" style="margin-top:64px">
+    <h2 class="section-title">23 hydration pathways — three frameworks</h2>
+    <p class="section-sub">Each framework scores independently. A solution can excel at absorption (gut → blood) but fail at cellular distribution (blood → cell), or retain water systemically but absorb slowly. Composite weighting: A×40% + B×35% + C×25%. Reference pathways outside supplement scope are listed separately.</p>
+    <div class="fw-tabs" id="fwTabs">
+      <button class="fw-tab active" data-fw="a" onclick="switchFW('a',this)">Framework A — Absorption</button>
+      <button class="fw-tab" data-fw="b" onclick="switchFW('b',this)">Framework B — Cellular</button>
+      <button class="fw-tab" data-fw="c" onclick="switchFW('c',this)">Framework C — Retention</button>
+      <button class="fw-tab" data-fw="ref" onclick="switchFW('ref',this)">Reference</button>
+      <button class="fw-tab fw-tab-score" data-fw="score" onclick="switchFW('score',this)">Composite scores</button>
+    </div>
+    <div class="fw-view" id="fw-a-view"></div>
+    <div class="fw-view" id="fw-b-view" style="display:none"></div>
+    <div class="fw-view" id="fw-c-view" style="display:none"></div>
+    <div class="fw-view" id="fw-ref-view" style="display:none"></div>
+    <div class="fw-view" id="fw-score-view" style="display:none"></div>
+  </section>
+
+  <section id="science" style="margin-top:64px">
+    <h2 class="section-title">Ingredient science</h2>
+    <p class="section-sub">Mechanistic evidence for every key electrolyte and active ingredient — independent of any brand. Confidence ratings reflect current peer-reviewed literature. Caveats included where evidence is mixed or commonly overstated.</p>
+    <div class="science-grid" id="scienceGrid"></div>
+  </section>
+
+  <section id="india" style="margin-top:64px">
+    <h2 class="section-title">India context — heat & access</h2>
+    <p class="section-sub">Live workplace heat risk by city, today's hydration recommendation, and product availability + regulatory status. WBGT data shown is typical seasonal value (May 2026); refresh later sessions for live API integration.</p>
+    <select class="city-select" id="citySelect" onchange="renderIndiaDashboard()"></select>
+    <div class="india-grid" id="indiaDashboard"></div>
+  </section>
+
+  <section id="sources" style="margin-top:64px">
+    <h2 class="section-title">Sources & references</h2>
+    <p class="section-sub">Every claim in this database traces back to a primary source. Below is the full inventory of peer-reviewed papers, clinical guidelines, regulatory directives, and industry data used to build the product catalog, pathway model, ingredient science cards, and India context.</p>
+
+    <div class="sources-stats" id="sourcesStats"></div>
+
+    <div class="sources-toolbar">
+      <div class="sources-search">
+        <svg class="sources-search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+        <input type="text" id="sourcesSearchInput" placeholder="Search by paper, author, topic, or identifier (e.g. PMC4712861, taurine, FSSAI)…" oninput="renderSources()">
+      </div>
+      <div class="sources-filters" id="sourcesFilters"></div>
+    </div>
+
+    <div class="sources-count"><span id="srcCount">0</span> sources shown</div>
+
+    <div class="sources-grid" id="sourcesGrid"></div>
+
+    <div class="sources-disclaimer"><strong>Methodology note.</strong> Source inventory is exhaustive of every citation embedded in the dashboard's product cards, pathway model, ingredient science cards, and India context. Where evidence is mixed or contested, source cards flag it explicitly. Identifiers (PMC/PMID) link to PubMed Central. Manufacturer spec sheets are included for transparency on product composition claims but are not weighted as independent evidence.</div>
+  </section>
+</main>
+
+<div class="compare-bar" id="compareBar">
+  <div class="compare-text"><span class="compare-count" id="compareCount">0</span> selected</div>
+  <button class="compare-go" onclick="openCompare()">Compare</button>
+  <button class="compare-clear" onclick="clearCompare()" title="Clear selection">×</button>
+</div>
+
+<!-- Sticky Q&A Widget -->
+<div class="qa-widget" id="qaWidget">
+  <div class="qa-bar">
+    <button class="qa-paper-btn" onclick="openPaperModal()" title="Generate clinical research paper" aria-label="Generate paper">📄</button>
+    <input type="text" class="qa-input" id="qaInput" placeholder="Ask anything: 'Why no Mg in Liquid I.V.?' or 'Compare Osmo vs Electral'" onfocus="expandQA()" onkeypress="if(event.key==='Enter')sendChat()">
+    <button class="qa-send" id="qaSend" onclick="sendChat()" aria-label="Send">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+    </button>
+  </div>
+  <div class="qa-suggestions">
+    <button class="qa-suggest-btn" onclick="askQ('Should I drink coconut water before a marathon?')">Should I drink coconut water before a marathon?</button>
+    <button class="qa-suggest-btn" onclick="askQ('What is the difference between LMNT and Liquid I.V.?')">Compare LMNT vs Liquid I.V.</button>
+    <button class="qa-suggest-btn" onclick="askQ('Explain SGLT1 in plain English')">Explain SGLT1</button>
+    <button class="qa-suggest-btn" onclick="askQ('Why does potassium without magnesium fail?')">Why K without Mg fails?</button>
+  </div>
+</div>
+
+<!-- Chat overlay (full conversation) -->
+<div class="chat-overlay" id="chatOverlay">
+  <div class="chat-overlay-head">
+    <div class="chat-overlay-title">Ask the Database</div>
+    <div class="chat-overlay-actions">
+      <button class="chat-overlay-btn" id="chatMaxBtn" onclick="toggleChatMaximize()" title="Maximize" aria-label="Maximize chat">
+        <svg id="chatMaxIcon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 3h7v2H5v5H3V3zm11 0h7v7h-2V5h-5V3zM3 14h2v5h5v2H3v-7zm16 0h2v7h-7v-2h5v-5z"/></svg>
+      </button>
+      <button class="chat-overlay-btn" onclick="toggleChatOverlay(false)" title="Close" aria-label="Close chat">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+    </div>
+  </div>
+  <div class="chat-overlay-body" id="chatBody"></div>
+</div>
+
+<!-- Modals -->
+<div class="modal-backdrop" id="modalBackdrop" onclick="if(event.target===this)closeAllModals()"></div>
+
+<!-- Filter close button mobile -->
+<button class="filters-close-btn" id="filtersCloseBtn" onclick="toggleMobileFilters()">Apply filters</button>
+
+<footer class="footer">
+  <div class="footer-grid">
+    <div class="footer-col">
+      <strong>About</strong>
+      Brand-neutral clinical reference. Maintained by Osmo Strategy team. <span style="color:var(--ink-3)">No advertising. No affiliate links.</span>
+    </div>
+    <div class="footer-col">
+      <strong>Sources</strong>
+      Peer-reviewed studies (Lancet, Nutrients, Cochrane, J Transl Med), WHO/UNICEF guidelines, ICMR/NNMB/FSSAI government data, USDA & PubMed-indexed papers.
+    </div>
+    <div class="footer-col">
+      <strong>Updated</strong>
+      May 2026 · v4.6
+    </div>
+    <div class="footer-col">
+      <strong>Conflict of interest</strong>
+      Hosted by Osmo (an Indian DTC electrolyte brand). Methodology is intentionally brand-blind: Osmo is one of 30 catalogued entries with no preferential treatment in scoring or ranking.
+    </div>
+  </div>
+  <div class="footer-bottom">Educational content only, not medical advice. For acute illness, severe dehydration, kidney disease, heart conditions, or pregnancy, consult a healthcare provider.</div>
+</footer>
+
+<script>
+// ============ CONFIG ============
+// Chat + paper-generator endpoint. Single point of change when deploy target moves.
+//   Cloudflare Worker (current): https://hydration-chat.<your-cf-subdomain>.workers.dev
+//   Netlify Function (legacy):   /.netlify/functions/chat
+// To update: deploy `cloudflare-worker/` with `wrangler deploy`, copy the URL it prints, paste below.
+const CHAT_API_URL = 'https://hydration-chat.osmo-1a2.workers.dev';
+
+// ============ DATA ============
+const PRODUCTS = [
+  {id:'who-ors',name:'WHO ORS (Reduced Osmolarity)',cat:'clinical',origin:'WHO/UNICEF, 2003 standard',na:1725,k:780,mg:0,ca:0,sugar:13.5,sgl:'Yes',tonicity:'hypotonic',ev:'high',
+    use:['illness'],constraints:[],
+    bestFor:'Acute diarrhea, cholera, paediatric dehydration. Gold standard.',
+    mechanism:'SGLT1 cotransport pulls hundreds of water molecules per cycle of Na + glucose absorption. Intact even when intestinal villi are severely damaged.',
+    evidence:'Reduced-osmolarity formula (75 mmol/L Na, 75 mmol/L glucose) reduced stool output 39% vs original WHO ORS. IV therapy need reduced 33%. PMC3950600.',
+    caveats:'Not appropriate as a daily/sports drink — sodium concentration too high for non-illness contexts. Do not exceed prescribed dose.',
+    ref:'WHO Diarrhoea Treatment Guidelines 2005'},
+  {id:'ringers',name:"Ringer's Lactate (IV)",cat:'clinical',origin:'Hospital IV — Sydney Ringer 1880s',na:3000,k:156,mg:0,ca:120,sugar:0,sgl:'N/A',tonicity:'isotonic',ev:'high',
+    use:['illness'],constraints:[],
+    bestFor:'Trauma, surgery, severe dehydration, sepsis. The clinical benchmark for balanced hydration.',
+    mechanism:'Balanced crystalloid most closely resembling blood plasma. Lactate metabolised to bicarbonate by liver — actively corrects metabolic acidosis from blood loss.',
+    evidence:'SMART trial: balanced crystalloids superior to normal saline for kidney outcomes. StatPearls: less likely to cause hyperchloremic acidosis than NS.',
+    caveats:'Hospital use only. Contraindicated in severe liver dysfunction (lactate metabolism impaired) and hyperkalemia.',
+    ref:'StatPearls 2023'},
+  {id:'nss',name:'Normal Saline 0.9% (IV)',cat:'clinical',origin:'Hospital IV',na:3540,k:0,mg:0,ca:0,sugar:0,sgl:'N/A',tonicity:'isotonic',ev:'high',
+    use:['illness'],constraints:[],
+    bestFor:'Volume resuscitation, medication dilution, hyponatremia correction. Most widely used IV fluid.',
+    mechanism:'154 mEq/L Na + Cl matches plasma osmolality. No K, Mg, Ca, or buffer.',
+    evidence:'Large-volume infusion can cause hyperchloremic metabolic acidosis (SMART trial). Still appropriate for many clinical applications.',
+    caveats:'Avoid as sole resuscitation fluid in trauma when LR is available.',
+    ref:'SMART Trial NEJM 2018'},
+  {id:'electral',name:'Electral',cat:'clinical',origin:'FDC Ltd, India — WHO formula',na:1725,k:780,mg:0,ca:0,sugar:13.5,sgl:'Yes',tonicity:'hypotonic',ev:'high',
+    use:['illness'],constraints:[],
+    bestFor:"India's #1 ORS brand. Acute diarrhea, vomiting, severe dehydration in tropical conditions.",
+    mechanism:'Strict WHO formula. Only WHO-recommended ORS available in tetra-pack format in India. Same SGLT1 mechanism as global WHO ORS.',
+    evidence:'FSSAI Oct 2025 ban on non-WHO formulations using "ORS" label upheld by Delhi HC Nov 2025. Electral remains compliant.',
+    caveats:'Same as WHO ORS — illness use only.',
+    ref:'FSSAI Directive 2025'},
+  {id:'pedialyte',name:'Pedialyte / Hydralyte',cat:'clinical',origin:'Abbott — Australia/USA',na:1035,k:780,mg:0,ca:0,sugar:6,sgl:'Yes',tonicity:'hypotonic',ev:'high',
+    use:['illness'],constraints:[],
+    bestFor:'Paediatric dehydration. Lower sodium suited to children.',
+    mechanism:'45 mEq/L Na (vs WHO 75) reduces hypernatremia risk in children. Some formulations contain zinc for additional anti-diarrheal effect.',
+    evidence:'AAP recommends for paediatric rehydration. Available in ready-to-drink format reduces preparation errors.',
+    caveats:'Insufficient sodium for severe dehydration in adults — use WHO ORS instead.',
+    ref:'AAP Diarrhea Guidelines'},
+  {id:'enerzal',name:'Enerzal',cat:'mass',origin:'FDC Ltd, India — food supplement',na:460,k:390,mg:50,ca:60,sugar:10,sgl:'Yes',tonicity:'isotonic',ev:'med',
+    use:['exercise','daily'],constraints:[],
+    bestFor:'Mid-tier sports drink. Broader minerals than Gatorade. Indian market alternative.',
+    mechanism:'Includes Na, K, Mg, Ca for more comprehensive electrolyte coverage than standard sports drinks. Not WHO-formula.',
+    evidence:'FSSAI food supplement classification (not drug). Government pricing documents confirm separate regulatory pathway from Electral.',
+    caveats:'10g sugar per serving — not for diabetics or as daily product.',
+    ref:'FSSAI Pricing Documents 2024'},
+  {id:'lmnt',name:'LMNT',cat:'global',origin:'USA — Robb Wolf, 2018',na:1000,k:200,mg:60,ca:0,sugar:0,sgl:'No',tonicity:'hypotonic',ev:'med',
+    use:['exercise','heat','keto'],constraints:['hypertension'],
+    bestFor:'Endurance athletes, keto, heavy sweaters, hot climates. Highest commercial sodium.',
+    mechanism:'Aggressive sodium replacement for athletes whose sweat sodium is in upper range (60-80+ mmol/L). Magnesium malate form is well-absorbed.',
+    evidence:'Sodium claim "based on literature with limitations" per dietitian review. Most athletes don\'t need 1000mg per dose.',
+    caveats:'Risk of overdose for sedentary users or those with hypertension. Single-dose sodium exceeds Indian average daily intake.',
+    ref:'AND Position Statement 2016'},
+  {id:'ph1500',name:'Precision Hydration PH 1500',cat:'global',origin:'UK — Precision Fuel & Hydration',na:750,k:125,mg:12,ca:24,sugar:1,sgl:'No',tonicity:'hypotonic',ev:'high',
+    use:['exercise','heat'],constraints:[],
+    bestFor:'Heavy/salty sweaters, ultra-endurance, hot races. Sweat-test driven personalisation.',
+    mechanism:'750mg Na per 500ml matches measured sweat sodium loss for the heaviest-sweating quartile. WADA batch-tested.',
+    evidence:'Pilocarpine sweat-test methodology published. 2026 hDrop study: single-site test oversimplifies dynamic sweat sodium (varies 60%+ with intensity).',
+    caveats:'Overkill for casual exercisers. Cost prohibitive for daily use.',
+    ref:'Maughan et al. 2018'},
+  {id:'ph1000',name:'Precision Hydration PH 1000',cat:'global',origin:'UK — Precision Fuel & Hydration',na:500,k:125,mg:12,ca:24,sugar:1,sgl:'No',tonicity:'hypotonic',ev:'high',
+    use:['exercise'],constraints:[],
+    bestFor:'Endurance training, racing in moderate heat, triathlons.',
+    mechanism:'Mid-range sodium for typical sweat profile. Hypotonic for fast gastric emptying during exercise.',
+    evidence:'Most popular Precision Hydration SKU. Used by professional triathletes and ultra-runners.',
+    caveats:'Designed for active use, not daily desk hydration.',
+    ref:'Precision Fuel & Hydration Lab Reports'},
+  {id:'nuun',name:'Nuun Sport',cat:'global',origin:'USA — Seattle, 2004',na:300,k:150,mg:25,ca:13,sugar:1,sgl:'No',tonicity:'hypotonic',ev:'med',
+    use:['daily','exercise'],constraints:[],
+    bestFor:'Daily hydration, light athletic use, convenient effervescent tablet.',
+    mechanism:'5-electrolyte effervescent tablet. Low sodium suited to non-heavy-sweaters.',
+    evidence:'B-Corp certified. Mg oxide form has poor bioavailability (~4% absorbed) vs glycinate or citrate forms.',
+    caveats:'Insufficient sodium for endurance or heat exposure. Sub-therapeutic Mg dose given low bioavailability.',
+    ref:'220 Triathlon Review'},
+  {id:'gatorade',name:'Gatorade Thirst Quencher',cat:'mass',origin:'USA — University of Florida, 1965',na:270,k:75,mg:0,ca:0,sugar:21,sgl:'Yes',tonicity:'isotonic',ev:'high',
+    use:['exercise'],constraints:['diabetes'],
+    bestFor:'Sports performance >60min intense exercise. Energy + hydration during activity.',
+    mechanism:'Sugar triggers SGLT1 cotransport. 21g sugar per 500ml provides carbohydrate fuel during sustained effort.',
+    evidence:'34+ years of university-backed studies. Decades of professional sport sponsorship. Harvard Health: NOT appropriate as illness ORS substitute (too much sugar, too little Na).',
+    caveats:'High sugar contraindicated for diabetics. Not appropriate for desk hydration.',
+    ref:'Murray et al. Sports Med Reviews'},
+  {id:'pocari',name:'Pocari Sweat',cat:'mass',origin:'Japan — Otsuka Pharmaceutical, 1980',na:200,k:125,mg:5,ca:5,sugar:30,sgl:'Yes',tonicity:'isotonic',ev:'med',
+    use:['daily','recovery'],constraints:['diabetes'],
+    bestFor:'Gentle daily rehydration, mild illness recovery, Asian market standard.',
+    mechanism:'Designed as a "drinkable IV drip" — replicates blood plasma electrolyte concentrations. Broader mineral profile than Gatorade.',
+    evidence:'Used in Asian hospitals for mild clinical rehydration. Japan Sport Association warns against overuse for sedentary individuals.',
+    caveats:'30g sugar per 500ml is high. Not suitable for diabetics or daily over-consumption.',
+    ref:'Otsuka Clinical Trials'},
+  {id:'osmo',name:'Osmo',cat:'indian',origin:'India DTC — Wellversed, ~2020',na:400,k:250,mg:100,ca:50,sugar:0,sgl:'No',tonicity:'hypotonic',ev:'med',
+    use:['daily','exercise','heat'],constraints:[],
+    bestFor:'Daily hydration, athletics, heat exposure. Cognitive support via dehydration prevention.',
+    mechanism:'Full electrolyte stack: Na/K/Mg/Ca/Cl + Zn (AQP3/7 expression) + Boron (renal Mg/Ca retention via 44% reduced excretion) + Taurine 1.3g (organic osmolyte for heat) + B1 thiamine (Krebs gatekeeper, unique among Indian DTC).',
+    evidence:'Boron 3mg dose backed by USDA PMC4712861 (Mg/Ca excretion -44%). B1 supplementation links to PMC12251314 (anti-fatigue exercise performance). Taurine heat tolerance per PMC12943169 (2026).',
+    caveats:'No glucose = no SGLT1 activation. Not for acute illness recovery (use WHO ORS instead). Taurine does NOT directly improve cognition (2025 meta-analysis, n=402) — cognitive benefit comes from preventing dehydration.',
+    ref:'PMC4712861, PMC12943169'},
+  {id:'liquidiv',name:'Liquid I.V.',cat:'indian',origin:'USA DTC (available in India)',na:500,k:370,mg:0,ca:0,sugar:11,sgl:'Yes',tonicity:'hypotonic',ev:'med',
+    use:['recovery','illness'],constraints:['diabetes'],
+    bestFor:'Fast ORS-style rehydration, illness recovery, post-travel dehydration.',
+    mechanism:'Cellular Transport Technology (CTT) = SGLT1 cotransport via 5g glucose + 500mg Na. Marketed as 2-3x hydration vs water.',
+    evidence:'CTT mechanism is established science (PMC7210290). Marketing claim of "2-3x" hydration is product-specific.',
+    caveats:'370mg K with 0mg Mg = structural Na/K-ATPase limitation (Apell 2017 Biochemistry). 11g sugar approaches FSSAI red-label threshold.',
+    ref:'Apell et al. Biochemistry 2017'},
+  {id:'fastup',name:'Fast&Up Reload',cat:'indian',origin:'India — Swiss-born brand',na:180,k:77,mg:20,ca:12.5,sugar:2.6,sgl:'Partial',tonicity:'isotonic',ev:'med',
+    use:['daily'],constraints:[],
+    bestFor:'Light daily hydration, casual athletes, effervescent format convenience.',
+    mechanism:'Broad ingredient list with sub-therapeutic doses. Effervescent format aids absorption rate.',
+    evidence:'Sugar 2.6g below FSSAI red-label threshold. Comprehensive label but no single pathway is won with sub-threshold doses.',
+    caveats:'Not effective for endurance, heat, or illness. "Looks complete on label" but doses are too low to drive any pathway.',
+    ref:'Fast&Up Product Spec Sheet'},
+  {id:'supply6',name:'Supply6',cat:'indian',origin:'India DTC',na:800,k:200,mg:60,ca:0,sugar:0,sgl:'No',tonicity:'hypotonic',ev:'med',
+    use:['exercise','heat'],constraints:['hypertension'],
+    bestFor:'High-sweat sports, outdoor work, heat exposure. Sodium-dominant replacement.',
+    mechanism:'Highest sodium among Indian DTC brands at 800mg. Zero sugar. Mg present but no B-vitamins, taurine, or boron.',
+    evidence:'Suitable for sweat-loss-dominant scenarios where Na replacement is the bottleneck.',
+    caveats:'Na:K ratio very high (4:1) may cause relative K deficit in prolonged use. Risk for hypertensive users.',
+    ref:'Supply6 Product Spec Sheet'},
+  {id:'coconut',name:'Coconut water (fresh)',cat:'traditional',origin:'South Asia, coastal India',na:190,k:700,mg:60,ca:58,sugar:25,sgl:'Yes',tonicity:'isotonic',ev:'med',
+    use:['exercise','daily','recovery'],constraints:['ckd','diabetes'],
+    bestFor:'Natural K source. Mild post-exercise hydration. Daily summer use.',
+    mechanism:'Highest natural K of any beverage (~700mg/500ml). Near-isotonic osmolality (~270 mOsm/L) close to blood plasma.',
+    evidence:'PMC3293068 RCT (n=12, endurance men): comparable to commercial sports drink for rehydration. 2025 J Athl Train systematic review (PMC11789751) found coconut water comparable to plain water across 3 trials. Used IV in emergencies (case reports).',
+    caveats:'CKD/heart failure/ACE inhibitor users: high K is dangerous. Diabetes: 25g natural sugar matters. Fresh > packaged (preservatives, added sugar). Evidence is mixed — claims of superiority over water are not consistently supported.',
+    ref:'PMC3293068, PMC11789751'},
+  {id:'chaas',name:'Chaas / Buttermilk (salted)',cat:'traditional',origin:'Pan-India',na:160,k:370,mg:20,ca:200,sugar:5,sgl:'Partial',tonicity:'isotonic',ev:'low',
+    use:['daily','heat'],constraints:['lactose'],
+    bestFor:'Post-meal digestion, summer coolant, daily summer hydration.',
+    mechanism:'Fermented curd + water + salt. Probiotics support gut health. Calcium from milk + added sodium from salt.',
+    evidence:'No controlled trials on chaas specifically. Closest evidence: J Athl Train 2025 systematic review (PMC11789751) found low-fat/skim milk improved volume status vs water (4 of 11 trials, very low certainty). Chaas adds salt to the milk base — plausibly improves Na replacement.',
+    caveats:'Lactose intolerance excludes use. Sodium content highly variable depending on preparation. Evidence judged very low certainty.',
+    ref:'PMC11789751 (J Athl Train 2025)'},
+  {id:'nimbu',name:'Nimbu pani / Shikanji',cat:'traditional',origin:'Pan-India summer staple',na:300,k:60,mg:5,ca:10,sugar:20,sgl:'Partial',tonicity:'variable',ev:'low',
+    use:['daily','heat'],constraints:['diabetes'],
+    bestFor:'Everyday summer hydration, quick rehydration, low-cost accessible option.',
+    mechanism:'Lemon juice + water + salt + sugar + cumin. Sodium from added salt is primary electrolyte. Vitamin C from lemon.',
+    evidence:'No controlled trial specific to nimbu pani. Adjacent evidence (PMC11789751 J Athl Train 2025) on alternative oral rehydration beverages confirms hand-prepared salted drinks function as adjunct hydration — not a substitute for clinical ORS.',
+    caveats:'Preparation variability is the key limitation. Sugar content wildly variable. Diabetic users should use sugar-free preparation. No direct controlled-trial evidence.',
+    ref:'PMC11789751 (J Athl Train 2025)'},
+  {id:'aam',name:'Aam panna (raw mango)',cat:'traditional',origin:'North/Central India',na:390,k:64,mg:5,ca:8,sugar:30,sgl:'Partial',tonicity:'variable',ev:'low',
+    use:['heat'],constraints:['diabetes'],
+    bestFor:'Heatstroke prevention, summer cooling, North India tradition.',
+    mechanism:'Raw mango pulp + black salt + cumin + sugar/jaggery. Black salt provides Na + trace minerals. Mangiferin antioxidant.',
+    evidence:'Traditional remedy with no controlled trials. Cooling properties attributed to raw mango acids and cumin.',
+    caveats:'30g sugar typical preparation — diabetes contraindication. No standardisation across recipes.',
+    ref:'Indian Traditional Foods Survey 2018'},
+  {id:'sattu',name:'Sattu drink (salted)',cat:'traditional',origin:'Bihar, Jharkhand, Eastern UP',na:200,k:324,mg:80,ca:50,sugar:2,sgl:'No',tonicity:'isotonic',ev:'med',
+    use:['daily','heat'],constraints:[],
+    bestFor:'Sustained summer energy. Bihar/UP staple. Pre-workout alternative.',
+    mechanism:'Roasted chickpea/gram flour + water + salt + lemon + cumin. 20g protein per 100g, K, Mg high (legume), Fe, Ca, fibre. Low GI.',
+    evidence:'Kargil War ration. PMC9206992 standardisation study confirms mineral content but high variation.',
+    caveats:'Best as functional drink (sustained energy), NOT fast electrolyte replacement for acute dehydration.',
+    ref:'PMC9206992'},
+  {id:'sugarcane',name:'Sugarcane juice (fresh)',cat:'traditional',origin:'Pan-India',na:30,k:350,mg:50,ca:25,sugar:50,sgl:'Yes',tonicity:'hypertonic',ev:'low',
+    use:['heat'],constraints:['diabetes','ckd'],
+    bestFor:'Quick energy in heat, K supplement, street cooling drink.',
+    mechanism:'Very high natural sugar + minerals. K at 300-400mg per 250ml. B-vitamins from cane.',
+    evidence:'No controlled trials. Hygiene of street preparation is highly variable.',
+    caveats:'CKD risk from high K. Diabetes contraindication. 50g sugar/250ml is hypertonic — may delay gastric emptying. Hygiene variable.',
+    ref:'IFCT 2017'},
+  {id:'mor',name:'Mor / Sambharam',cat:'traditional',origin:'Kerala, Tamil Nadu, Karnataka',na:200,k:350,mg:25,ca:200,sugar:5,sgl:'Partial',tonicity:'isotonic',ev:'low',
+    use:['daily','heat'],constraints:['lactose'],
+    bestFor:'Post-meal South Indian tradition, summer cooling, digestive aid.',
+    mechanism:'South Indian buttermilk variant — thinner consistency, with curry leaves, ginger, green chili, salt.',
+    evidence:'Traditional use; saltier preparation than North Indian chaas due to South Indian palate. Adjacent evidence (PMC11789751 J Athl Train 2025) supports milk-based drinks as adjunct hydration with low-certainty improvement vs water.',
+    caveats:'Lactose intolerance excludes use. No direct controlled-trial evidence for mor/sambharam specifically.',
+    ref:'PMC11789751 (J Athl Train 2025)'},
+  {id:'nuun-zero',name:'Nuun Zero Sugar',cat:'global',origin:'USA — Nuun Hydration',na:200,k:125,mg:20,ca:30,sugar:0,sgl:'No',tonicity:'hypotonic',ev:'med',
+    use:['daily'],constraints:[],
+    bestFor:'Office daily use, sugar-free preference, light activity.',
+    mechanism:'Zero-sugar version of Nuun Sport. Lower sodium than Sport variant.',
+    evidence:'Same B-Corp standards as Nuun Sport. Lower electrolyte load means narrower use case.',
+    caveats:'Not for endurance or heat. Mg form is oxide (poor bioavailability).',
+    ref:'Nuun Spec Sheet'},
+  {id:'gatorade-zero',name:'Gatorade Zero',cat:'mass',origin:'USA — PepsiCo',na:270,k:75,mg:0,ca:0,sugar:0,sgl:'No',tonicity:'isotonic',ev:'med',
+    use:['exercise','daily'],constraints:[],
+    bestFor:'Sugar-free version of Gatorade. Moderate exercise, diabetics.',
+    mechanism:'Same Na/K as standard Gatorade but no glucose → no SGLT1 activation → slightly slower absorption.',
+    evidence:'Suitable for sugar-conscious users or diabetics. Limited Mg/Ca remains a gap.',
+    caveats:'No SGLT1 advantage. Not appropriate as ORS substitute.',
+    ref:'Gatorade Spec Sheet'},
+  {id:'powerade',name:'Powerade',cat:'mass',origin:'USA — Coca-Cola',na:150,k:35,mg:5,ca:5,sugar:21,sgl:'Yes',tonicity:'isotonic',ev:'med',
+    use:['exercise'],constraints:['diabetes'],
+    bestFor:'General sports hydration. Slightly broader electrolyte profile than Gatorade.',
+    mechanism:'Includes small amounts of Mg and Ca absent from Gatorade. B-vitamin content (B3, B12) below performance-relevant doses.',
+    evidence:'No demonstrated performance advantage over Gatorade in independent studies.',
+    caveats:'High sugar content. B-vitamin doses unlikely to be performance-relevant.',
+    ref:'Powerade Spec Sheet'},
+  {id:'water',name:'Plain water',cat:'traditional',origin:'Baseline',na:0,k:0,mg:0,ca:0,sugar:0,sgl:'No',tonicity:'hypotonic',ev:'high',
+    use:['daily'],constraints:[],
+    bestFor:'Baseline hydration. Most situations under 60 minutes of moderate activity.',
+    mechanism:'Zero electrolytes means zero osmotic gradient, zero SGLT1 activation, zero ADH retention signal. Kidneys excrete water freely.',
+    evidence:'Maughan AJCN 2016 Beverage Hydration Index (PMID 26702122): plain water retained ~58% of consumed volume vs ~74-77% for ORS/milk. 2021 follow-up (PMC8465972) confirmed for carbohydrate+electrolyte+protein drinks.',
+    caveats:'In extreme heat or sustained exercise (>2% body water loss), water alone risks hyponatremia. Plasma Na dilutes → ADH suppressed → kidneys excrete more water → net dehydration.',
+    ref:'Maughan et al. AJCN 2016 (PMID 26702122)'},
+  {id:'maurten',name:'Maurten Drink Mix 320',cat:'global',origin:'Sweden — Maurten AB, 2015',na:800,k:0,mg:0,ca:0,sugar:80,sgl:'Yes',tonicity:'isotonic',ev:'mixed',
+    use:['exercise'],constraints:['diabetes'],
+    bestFor:'Marathon, ultra-endurance, high-carb fueling, GI-sensitive runners.',
+    mechanism:'Sodium alginate + pectin react with stomach acid → hydrogel encapsulates carbs → reduces GI distress during high-carb intake.',
+    evidence:'2020 review found no difference vs standard carb drinks. 2021 Rowe (Leeds Beckett, independent): hydrogel reduces GI upset in RUNNERS (not in cycling).',
+    caveats:'Primary purpose is carbohydrate delivery, NOT electrolytes. 80g sugar contraindicates diabetic use.',
+    ref:'Rowe et al. 2021'},
+  {id:'kanji',name:'Kanji (fermented)',cat:'traditional',origin:'North India',na:80,k:200,mg:10,ca:30,sugar:1,sgl:'No',tonicity:'hypotonic',ev:'low',
+    use:['daily'],constraints:[],
+    bestFor:'Digestive health, mild summer hydration, traditional Ayurvedic.',
+    mechanism:'Fermented water from black carrots or rice. Probiotics from fermentation. Mild electrolyte content.',
+    evidence:'Traditional use only. No controlled trials. Distinct from rice-congee "kanji".',
+    caveats:'Limited nutritional documentation. Variable composition.',
+    ref:'Ayurvedic Texts'}
+];
+
+// ============ LAYMAN GLOSSARY (for inline tooltips) ============
+const GLOSSARY = {
+  'SGLT1':"The gut's water pump. Only switches on when both salt + sugar arrive together — that's why ORS sachets work even during severe diarrhea.",
+  'Na/K-ATPase':"The pump every cell uses to balance sodium and potassium. Magnesium is its starter motor — without Mg, the pump can't run no matter how much K you drink.",
+  'aquaporin':"Tiny one-way water doors inside cells. Zinc tells cells how many to make.",
+  'AQP1':"Water doors in your gut wall — the highway for water absorbed from drinks.",
+  'AQP2':"Water doors in your kidneys. ADH tells them when to keep water vs let it pass.",
+  'ADH':"The hormone that tells your kidneys 'hold onto water'. Salt levels trigger it; too much plain water suppresses it.",
+  'aldosterone':"A hormone that tells kidneys to keep more sodium (and water comes with it).",
+  'hypotonic':"Less concentrated than blood — leaves the stomach fastest. Best for daily and athletic hydration.",
+  'isotonic':"Same concentration as blood — smoothest absorption. Closest to how IV fluids work.",
+  'hypertonic':"More concentrated than blood — sits in the stomach longer. Why sugary drinks feel 'sloshy'.",
+  'osmolality':"How concentrated a fluid is. The drier-saltier-sweeter it is, the more it pulls water around in your body.",
+  'osmotic gradient':"The salt-driven pressure that pulls water from your gut into your bloodstream. The basic physics of all rehydration.",
+  'electrolytes':"Charged minerals (sodium, potassium, magnesium, calcium, chloride) that conduct your body's electrical signals.",
+  'cofactor':"A 'helper' that an enzyme needs to work. Magnesium is the cofactor for the cell's sodium-potassium pump.",
+  'organic osmolyte':"A protective molecule cells stockpile under heat or stress to hold their shape (taurine is the main one).",
+  'WBGT':"Wet Bulb Globe Temperature — a heat-stress reading combining temperature + humidity + sun. Above 30°C means restrict outdoor work.",
+  'EAH':"Exercise-associated hyponatremia — dangerously low blood sodium from drinking too much plain water during long efforts.",
+  'CKD':"Chronic kidney disease — reduced kidney function. People with CKD must avoid high-potassium drinks like coconut water.",
+  'ORS':"Oral Rehydration Solution — WHO's salt + sugar formula that has saved millions of lives in diarrhea outbreaks.",
+  'rotavirus':"A gut-damaging virus common in children. ORS still works because the SGLT1 pathway survives.",
+  'cholera':"A severe bacterial diarrhea. ORS works here too — same SGLT1 mechanism.",
+  'gastric emptying':"How fast fluid leaves your stomach into the gut. Faster = quicker hydration.",
+  'plasma volume':"The water portion of your blood. Drops in heat/exercise; the goal of hydration is to keep it stable.",
+  'Krebs cycle':"Your cells' main energy-production line. B1 (thiamine) is its gatekeeper.",
+  'NAD+':"Energy currency cells use. B3 (niacin) makes it.",
+  'hyponatremia':"Dangerously low blood sodium — typically from drinking too much plain water during long efforts.",
+  'osmoreceptor':"Sensor in your brain that detects how concentrated your blood is. Triggers thirst and ADH."
+};
+
+// Layman one-liners for each product (keyed by id)
+const LAY = {
+  'who-ors':"The salt + sugar combo that saves lives in diarrhea. Your gut absorbs water even when sick — like a backup generator that kicks in when the main power fails.",
+  'ringers':"Hospital drip closest to your blood's natural composition. For surgery and severe dehydration — not something you'd ever drink.",
+  'nss':"Hospital saltwater drip. Simpler than Ringer's; mostly used for IV medications and basic fluid replacement.",
+  'electral':"India's #1 ORS for diarrhea. Same WHO formula as global ORS — clinical grade, illness only. Not a sports drink.",
+  'pedialyte':"ORS for kids. Lower salt because children's bodies are smaller and more sensitive.",
+  'enerzal':"Mid-tier sports drink with broader minerals than Gatorade. 10g sugar — fine during workouts, not for daily use.",
+  'lmnt':"Ultra-high salt for endurance athletes and heavy sweaters. Drinking this at a desk job is like fueling a Ferrari to go grocery shopping — overkill.",
+  'ph1500':"Sweat-test driven. Built for the heaviest sweaters in extreme heat — overkill for casual use.",
+  'ph1000':"Endurance-friendly hydration for typical athletes during long sessions. The 'most popular' Precision tier.",
+  'nuun':"Convenient effervescent tab for daily use or light activity. Magnesium form here is poorly absorbed though.",
+  'gatorade':"60+ minutes of intense exercise → useful. Otherwise: too much sugar, too little salt for the job.",
+  'pocari':"Gentle taste, designed to mimic blood plasma. Used in Asian hospitals for mild rehydration after illness.",
+  'osmo':"Most complete Indian DTC stack: magnesium + boron + taurine + B1. Designed for daily use, athletics, and Indian heat — not for acute diarrhea.",
+  'liquidiv':"Fast ORS-style rehydration after travel or illness. Has the potassium but no magnesium — like filling the engine with fuel but forgetting the starter motor.",
+  'fastup':"Looks complete on the label, but the doses are too low to actually drive any pathway. Convenient effervescent format.",
+  'supply6':"Highest-sodium Indian DTC. Built for high-sweat sports and outdoor work. Skip if you have high blood pressure.",
+  'coconut':"Nature's most potassium-rich drink. Avoid if you have kidney disease — too much potassium can be dangerous.",
+  'chaas':"Salty buttermilk + probiotics. India's traditional summer coolant. Skip if you're lactose-intolerant.",
+  'nimbu':"Lemon + salt + sugar + water. Cheap, accessible, and effective for everyday summer hydration.",
+  'aam':"Raw mango summer drink with black salt. Heatstroke prevention, but high sugar — diabetics should be cautious.",
+  'sattu':"Roasted gram + salt + lemon. Sustains energy + electrolytes for hours. Bihar/UP staple — better than most sports drinks for outdoor workers.",
+  'sugarcane':"Quick energy + potassium. Avoid if diabetic — 50g of sugar per glass. Hygiene varies wildly at street stalls.",
+  'mor':"Spiced South Indian buttermilk. Saltier than chaas; same lactose caution.",
+  'nuun-zero':"Sugar-free office hydration. Not enough to handle endurance or heat exposure.",
+  'gatorade-zero':"Sugar-free Gatorade. Loses the SGLT1 boost; the magnesium gap remains.",
+  'powerade':"Like Gatorade but with traces of magnesium and calcium. No real performance edge over Gatorade.",
+  'water':"Fine for most days under 60 minutes of activity. In extreme heat or long efforts, plain water alone can actually worsen dehydration — your kidneys flush it back out.",
+  'maurten':"Hi-tech carb fuel for marathon runners — primarily about delivering carbs without GI distress, not really an electrolyte product.",
+  'kanji':"Fermented carrot or rice water. Mild summer hydration with probiotic benefits."
+};
+
+// Wrap glossary terms with tooltip spans inside an HTML string. Skips content within HTML tags.
+const _glossaryKeys = Object.keys(GLOSSARY).sort((a,b)=>b.length-a.length); // longest first to avoid SGLT1 matching inside Na/K-ATPase etc
+function escapeAttr(s){return String(s).replace(/&/g,'&amp;').replace(/"/g,'&quot;').replace(/</g,'&lt;').replace(/>/g,'&gt;')}
+function wrapTerms(html){
+  if(!html) return '';
+  // Process per term, splitting on tags so we only ever match inside text nodes (never inside data-def or other attributes)
+  const wrapped = new Set();
+  let result = String(html);
+  for(const term of _glossaryKeys){
+    if(wrapped.has(term)) continue; // each term wraps at most once per call to avoid clutter
+    const re = new RegExp('\\b'+term.replace(/[.*+?^${}()|[\]\\]/g,'\\$&')+'\\b');
+    // Split into alternating text / tag parts; even index = text, odd = tag
+    const parts = result.split(/(<[^>]+>)/);
+    let didWrap = false;
+    for(let i=0;i<parts.length;i+=2){
+      if(re.test(parts[i])){
+        parts[i] = parts[i].replace(re, `<span class="term" data-def="${escapeAttr(GLOSSARY[term])}" onclick="event.stopPropagation();this.classList.toggle('tap')">${term}</span>`);
+        wrapped.add(term);
+        didWrap = true;
+        break;
+      }
+    }
+    if(didWrap) result = parts.join('');
+  }
+  return result;
+}
+
+const FILTERS = {evidence:[],tonicity:[],sugar:[],category:[],use:[],constraint:[],sodiumMax:4000,search:''};
+const COMPARE = new Set();
+
+const STATS = [
+  {n:58,suffix:'%',label:'Plain water retention vs 74-77% for electrolyte drinks',source:'Maughan AJCN 2016 BHI (PMID 26702122)'},
+  {n:31,suffix:'%',label:'Global population with inadequate Mg intake',source:'Lancet Global Health 2024'},
+  {n:82,suffix:'%',label:'Indian workers exposed above WBGT recommendations',source:'PMC4730480'},
+  {n:23,suffix:'',label:'Biological pathways catalogued',source:'Three-framework model'}
+];
+
+const CITIES = {
+  'mumbai':{name:'Mumbai',wbgt:31.2,risk:'high',humidity:78,temp:34,monsoon:false},
+  'delhi':{name:'Delhi',wbgt:33.8,risk:'extreme',humidity:35,temp:42,monsoon:false},
+  'bangalore':{name:'Bangalore',wbgt:24.6,risk:'low',humidity:62,temp:30,monsoon:false},
+  'chennai':{name:'Chennai',wbgt:32.4,risk:'high',humidity:74,temp:36,monsoon:false},
+  'kolkata':{name:'Kolkata',wbgt:30.9,risk:'high',humidity:72,temp:35,monsoon:false},
+  'hyderabad':{name:'Hyderabad',wbgt:28.7,risk:'med',humidity:55,temp:38,monsoon:false},
+  'ahmedabad':{name:'Ahmedabad',wbgt:32.1,risk:'high',humidity:42,temp:41,monsoon:false},
+  'pune':{name:'Pune',wbgt:27.4,risk:'med',humidity:58,temp:35,monsoon:false},
+  'jaipur':{name:'Jaipur',wbgt:33.2,risk:'extreme',humidity:30,temp:43,monsoon:false},
+  'kochi':{name:'Kochi',wbgt:30.3,risk:'high',humidity:82,temp:33,monsoon:false}
+};
+
+const FILTER_OPTIONS = {
+  evidence:[['high','High'],['med','Medium'],['low','Low'],['mixed','Mixed']],
+  tonicity:[['hypotonic','Hypotonic'],['isotonic','Isotonic'],['hypertonic','Hypertonic'],['variable','Variable']],
+  sugar:[['zero','Zero sugar'],['lt5','<5g'],['lt15','<15g'],['ge15','≥15g']],
+  category:[['clinical','Clinical'],['global','Global Sports'],['mass','Mass Market'],['indian','Indian DTC'],['traditional','Traditional']],
+  use:[['illness','Acute illness'],['exercise','Exercise >60min'],['heat','Heat work'],['daily','Daily'],['recovery','Recovery'],['keto','Keto']],
+  constraint:[['diabetes','Diabetes'],['ckd','CKD/Kidney'],['hypertension','Hypertension'],['lactose','Lactose intolerant']]
+};
+
+// ============ STATE & INIT ============
+function init(){
+  setupTheme();
+  buildStats();
+  buildFilters();
+  buildCitySelect();
+  renderProducts();
+  renderIndiaDashboard();
+  setupScrollProgress();
+  setupCountUp();
+}
+
+// ============ THEME ============
+function setupTheme(){
+  const saved = localStorage.getItem('theme');
+  const sys = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+  const theme = saved || (sys?'dark':'light');
+  document.documentElement.setAttribute('data-theme',theme);
+  updateThemeIcon(theme);
+}
+function toggleTheme(){
+  const current = document.documentElement.getAttribute('data-theme');
+  const next = current==='dark'?'light':'dark';
+  document.documentElement.setAttribute('data-theme',next);
+  localStorage.setItem('theme',next);
+  updateThemeIcon(next);
+}
+function updateThemeIcon(theme){
+  const icon = document.getElementById('themeIcon');
+  if(!icon) return;
+  if(theme==='dark'){
+    icon.innerHTML = '<path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>';
+  } else {
+    icon.innerHTML = '<circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M4.93 4.93l1.41 1.41m11.32 11.32 1.41 1.41M2 12h2m16 0h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/>';
+  }
+}
+
+// ============ STATS / COUNT-UP ============
+function buildStats(){
+  document.getElementById('stats').innerHTML = STATS.map((s,i)=>`
+    <div class="stat" data-stat-i="${i}">
+      <span class="stat-num"><span class="stat-target" data-n="${s.n}">0</span>${s.suffix}</span>
+      <div class="stat-label">${s.label}</div>
+      <div class="stat-source">Source: ${s.source}</div>
+    </div>`).join('');
+}
+function setupCountUp(){
+  const els = document.querySelectorAll('.stat-target');
+  const observer = new IntersectionObserver(entries=>{
+    entries.forEach(e=>{
+      if(e.isIntersecting && !e.target.dataset.done){
+        e.target.dataset.done='1';
+        animateCount(e.target, parseFloat(e.target.dataset.n), 1500);
+      }
+    });
+  },{threshold:0.3});
+  els.forEach(el=>observer.observe(el));
+}
+function animateCount(el, target, duration){
+  const start = performance.now();
+  function tick(now){
+    const t = Math.min((now-start)/duration, 1);
+    const eased = 1 - Math.pow(1-t, 3);
+    el.textContent = Math.round(target*eased);
+    if(t<1) requestAnimationFrame(tick);
+    else el.textContent = target;
+  }
+  requestAnimationFrame(tick);
+}
+
+// ============ FILTERS ============
+function buildFilters(){
+  ['evidence','tonicity','sugar','category','use','constraint'].forEach(key=>{
+    const container = document.getElementById(key+'Filters');
+    container.innerHTML = FILTER_OPTIONS[key].map(([val,label])=>`<button class="filter-pill" data-key="${key}" data-val="${val}" onclick="toggleFilter('${key}','${val}',this)">${label}</button>`).join('');
+  });
+}
+function toggleFilter(key,val,btn){
+  const arr = FILTERS[key];
+  const i = arr.indexOf(val);
+  if(i>=0){ arr.splice(i,1); btn.classList.remove('active'); }
+  else { arr.push(val); btn.classList.add('active'); }
+  renderProducts();
+}
+function clearFilter(key){
+  FILTERS[key] = [];
+  document.querySelectorAll(`.filter-pill[data-key="${key}"]`).forEach(b=>b.classList.remove('active'));
+  if(key==='sugar'){ /* range stays */ }
+  renderProducts();
+}
+function onSodiumRange(v){
+  FILTERS.sodiumMax = parseInt(v);
+  document.getElementById('sodiumLabel').textContent = `0 – ${v} mg`;
+  renderProducts();
+}
+let _searchScrollTimer = null;
+function onSearch(v){
+  FILTERS.search = v.toLowerCase().trim();
+  renderProducts();
+  // When user starts typing, smooth-scroll to the catalog so they can see results filter live
+  if(FILTERS.search && _searchScrollTimer === null){
+    _searchScrollTimer = setTimeout(()=>{
+      const cat = document.getElementById('catalog');
+      if(cat){
+        const top = cat.getBoundingClientRect().top + window.scrollY - 70;
+        if(window.scrollY < top - 100) window.scrollTo({top, behavior:'smooth'});
+      }
+      _searchScrollTimer = null;
+    }, 250);
+  }
+}
+function passesFilters(p){
+  if(FILTERS.evidence.length && !FILTERS.evidence.includes(p.ev)) return false;
+  if(FILTERS.tonicity.length && !FILTERS.tonicity.includes(p.tonicity)) return false;
+  if(FILTERS.category.length && !FILTERS.category.includes(p.cat)) return false;
+  if(FILTERS.use.length && !p.use.some(u=>FILTERS.use.includes(u))) return false;
+  if(FILTERS.constraint.length){
+    // Filter OUT products whose constraints array intersects user's constraints
+    if(p.constraints.some(c=>FILTERS.constraint.includes(c))) return false;
+  }
+  if(FILTERS.sugar.length){
+    const ok = FILTERS.sugar.some(s=>{
+      if(s==='zero') return p.sugar===0;
+      if(s==='lt5') return p.sugar<5;
+      if(s==='lt15') return p.sugar<15;
+      if(s==='ge15') return p.sugar>=15;
+    });
+    if(!ok) return false;
+  }
+  if(p.na > FILTERS.sodiumMax) return false;
+  if(FILTERS.search){
+    const blob = (p.name+' '+p.origin+' '+p.bestFor+' '+p.mechanism+' '+p.cat).toLowerCase();
+    if(!blob.includes(FILTERS.search)) return false;
+  }
+  return true;
+}
+
+// ============ RENDER PRODUCTS ============
+function renderProducts(){
+  const sortVal = document.getElementById('sortSelect')?.value || 'default';
+  let filtered = PRODUCTS.filter(passesFilters);
+  filtered = sortProducts(filtered, sortVal);
+  document.getElementById('productsCount').textContent = filtered.length;
+  const maxNa = Math.max(...PRODUCTS.map(p=>p.na), 1);
+  const maxK = Math.max(...PRODUCTS.map(p=>p.k), 1);
+  const grid = document.getElementById('productsGrid');
+  grid.innerHTML = filtered.map(p=>{
+    const naPct = Math.min((p.na/maxNa)*100, 100);
+    const kPct = Math.min((p.k/maxK)*100, 100);
+    const evClass = p.ev;
+    const evLabel = ({high:'High',med:'Medium',low:'Low',mixed:'Mixed'})[p.ev];
+    const mgFlag = p.mg===0 ? `<span class="mg-flag" title="0mg Mg means Na/K-ATPase pump can't fully function — pump requires Mg2+ as cofactor">⚠ 0mg Mg</span>` : '';
+    const checked = COMPARE.has(p.id) ? 'checked' : '';
+    return `<div class="card" onclick="openDetail('${p.id}')">
+      <div class="card-checkbox ${checked}" onclick="event.stopPropagation();toggleCompare('${p.id}',this)" title="Add to compare"></div>
+      <div class="card-header">
+        <div>
+          <span class="card-cat ${p.cat}">${({clinical:'Clinical',global:'Global',mass:'Mass',indian:'Indian DTC',traditional:'Traditional'})[p.cat]}</span>
+          <div class="card-name">${p.name}</div>
+          <div class="card-origin">${p.origin}</div>
+        </div>
+      </div>
+      <div class="card-bars">
+        <div class="bar-row">
+          <div class="bar-label">Na</div>
+          <div class="bar-track"><div class="bar-fill" style="width:${naPct}%"></div></div>
+          <div class="bar-val">${p.na}mg</div>
+        </div>
+        <div class="bar-row">
+          <div class="bar-label">K</div>
+          <div class="bar-track"><div class="bar-fill med" style="width:${kPct}%"></div></div>
+          <div class="bar-val">${p.k}mg</div>
+        </div>
+        <div class="bar-row">
+          <div class="bar-label">Mg</div>
+          <div class="bar-track"><div class="bar-fill ${p.mg>0?'high':'gap'}" style="width:${p.mg>0?Math.min(p.mg,100):0}%"></div></div>
+          <div class="bar-val">${p.mg}mg</div>
+        </div>
+      </div>
+      <div class="card-badges">
+        <span class="badge ${evClass}">${evLabel} evidence</span>
+        <span class="badge tonicity">${p.tonicity}</span>
+        ${mgFlag}
+      </div>
+      <div class="card-best"><strong>Best for:</strong> ${p.bestFor}</div>
+    </div>`;
+  }).join('');
+}
+function sortProducts(arr, mode){
+  const copy = [...arr];
+  switch(mode){
+    case 'na-desc': return copy.sort((a,b)=>b.na-a.na);
+    case 'na-asc': return copy.sort((a,b)=>a.na-b.na);
+    case 'mg-desc': return copy.sort((a,b)=>b.mg-a.mg);
+    case 'sugar-asc': return copy.sort((a,b)=>a.sugar-b.sugar);
+    case 'ev-high': const order={high:0,med:1,mixed:2,low:3}; return copy.sort((a,b)=>order[a.ev]-order[b.ev]);
+    default: return copy;
+  }
+}
+
+// ============ DETAIL MODAL ============
+function openDetail(id){
+  const p = PRODUCTS.find(x=>x.id===id);
+  if(!p) return;
+  const evLabel = ({high:'High',med:'Medium',low:'Low',mixed:'Mixed'})[p.ev];
+  const constraintAlerts = p.constraints.length ? `<div class="alert-box"><strong>Not recommended for:</strong> ${p.constraints.map(c=>({diabetes:'Diabetes (sugar content)',ckd:'CKD / Kidney disease (potassium load)',hypertension:'Hypertension (sodium load)',lactose:'Lactose intolerance'})[c]).join(' · ')}.</div>` : '';
+  const mgWarning = p.mg===0 ? `<div class="alert-box"><strong>0mg Mg:</strong> The Na/K-ATPase pump requires Mg²⁺ as obligate cofactor (Apell 2017). Products with K but no Mg cannot fully utilize the K at the cellular level.</div>` : '';
+  const html = `
+    <div class="modal modal-large">
+      <div class="modal-head">
+        <div>
+          <span class="card-cat ${p.cat}">${({clinical:'Clinical',global:'Global',mass:'Mass',indian:'Indian DTC',traditional:'Traditional'})[p.cat]}</span>
+          <div class="modal-title">${p.name}</div>
+          <div class="modal-sub">${p.origin}</div>
+        </div>
+        <button class="modal-close" onclick="closeAllModals()">×</button>
+      </div>
+      <div class="modal-body">
+        <div class="detail-section">
+          <div class="detail-section-title">Nutrient profile (per serving)</div>
+          <div class="nutrient-grid">
+            <div class="nutrient-cell"><span class="nutrient-cell-val">${p.na}</span><span class="nutrient-cell-label">Sodium (mg)</span></div>
+            <div class="nutrient-cell"><span class="nutrient-cell-val">${p.k}</span><span class="nutrient-cell-label">Potassium (mg)</span></div>
+            <div class="nutrient-cell"><span class="nutrient-cell-val">${p.mg}</span><span class="nutrient-cell-label">Magnesium (mg)</span></div>
+            <div class="nutrient-cell"><span class="nutrient-cell-val">${p.ca}</span><span class="nutrient-cell-label">Calcium (mg)</span></div>
+            <div class="nutrient-cell"><span class="nutrient-cell-val">${p.sugar}g</span><span class="nutrient-cell-label">Sugar</span></div>
+            <div class="nutrient-cell"><span class="nutrient-cell-val">${p.sgl}</span><span class="nutrient-cell-label">SGLT1</span></div>
+          </div>
+          <div style="margin-top:10px;display:flex;gap:6px;flex-wrap:wrap">
+            <span class="badge ${p.ev}">${evLabel} evidence</span>
+            <span class="badge tonicity">${p.tonicity}</span>
+          </div>
+        </div>
+        ${LAY[p.id] ? `<div class="lay-callout"><span class="lay-callout-icon">💡</span><div class="lay-callout-body"><span class="lay-callout-label">In plain English</span><div class="lay-callout-text"><em>${LAY[p.id]}</em></div></div></div>` : ''}
+        <div class="detail-section">
+          <div class="detail-section-title">Mechanism</div>
+          <div class="detail-text">${wrapTerms(p.mechanism)}</div>
+        </div>
+        <div class="detail-section">
+          <div class="detail-section-title">Evidence summary</div>
+          <div class="detail-text">${wrapTerms(p.evidence)}</div>
+        </div>
+        <div class="detail-section">
+          <div class="detail-section-title">Best for</div>
+          <div class="detail-text">${wrapTerms(p.bestFor)}</div>
+        </div>
+        <div class="detail-section">
+          <div class="detail-section-title">Caveats & contraindications</div>
+          <div class="detail-text">${wrapTerms(p.caveats)}</div>
+          ${mgWarning}
+          ${constraintAlerts}
+        </div>
+        <div class="detail-section">
+          <div class="detail-section-title">Reference</div>
+          <div class="detail-text" style="font-style:italic;color:var(--ink-3)">${p.ref}</div>
+        </div>
+      </div>
+    </div>`;
+  showModal(html);
+}
+
+// ============ COMPARE ============
+function toggleCompare(id, el){
+  if(COMPARE.has(id)){ COMPARE.delete(id); el.classList.remove('checked'); }
+  else if(COMPARE.size>=4){ alert('Maximum 4 products to compare. Remove one first.'); return; }
+  else { COMPARE.add(id); el.classList.add('checked'); }
+  updateCompareBar();
+}
+function clearCompare(){
+  COMPARE.clear();
+  document.querySelectorAll('.card-checkbox').forEach(c=>c.classList.remove('checked'));
+  updateCompareBar();
+}
+function updateCompareBar(){
+  const bar = document.getElementById('compareBar');
+  document.getElementById('compareCount').textContent = COMPARE.size;
+  if(COMPARE.size>=2) bar.classList.add('show'); else bar.classList.remove('show');
+}
+function openCompare(){
+  const ids = [...COMPARE];
+  const items = ids.map(id=>PRODUCTS.find(p=>p.id===id)).filter(Boolean);
+  if(items.length<2) return;
+  const cols = items.map(p=>{
+    const evLabel = ({high:'High',med:'Medium',low:'Low',mixed:'Mixed'})[p.ev];
+    return `<div class="compare-col">
+      <div class="compare-col-name">${p.name}</div>
+      <div class="compare-row"><div class="compare-key">Sodium</div><div class="compare-val">${p.na} mg</div></div>
+      <div class="compare-row"><div class="compare-key">Potassium</div><div class="compare-val">${p.k} mg</div></div>
+      <div class="compare-row"><div class="compare-key">Magnesium</div><div class="compare-val ${p.mg===0?'':''}" style="${p.mg===0?'color:var(--alert);font-weight:700':''}">${p.mg} mg</div></div>
+      <div class="compare-row"><div class="compare-key">Calcium</div><div class="compare-val">${p.ca} mg</div></div>
+      <div class="compare-row"><div class="compare-key">Sugar</div><div class="compare-val">${p.sugar} g</div></div>
+      <div class="compare-row"><div class="compare-key">SGLT1</div><div class="compare-val">${p.sgl}</div></div>
+      <div class="compare-row"><div class="compare-key">Tonicity</div><div class="compare-val">${p.tonicity}</div></div>
+      <div class="compare-row"><div class="compare-key">Evidence</div><div class="compare-val"><span class="badge ${p.ev}">${evLabel}</span></div></div>
+      <div class="compare-row"><div class="compare-key">Best for</div><div class="compare-val" style="font-size:11px;line-height:1.4">${p.bestFor}</div></div>
+    </div>`;
+  }).join('');
+  const narration = generateNarration(items);
+  // Cost calculator rows
+  const costRows = items.map(p=>`<div class="cost-row"><div>${p.name}</div><div><input type="number" placeholder="₹/serving" id="cost-${p.id}" oninput="calcCost()"></div><div class="cost-result" id="costres-${p.id}">—</div></div>`).join('');
+  const html = `
+    <div class="modal modal-large">
+      <div class="modal-head">
+        <div>
+          <div class="modal-title">Comparing ${items.length} products</div>
+          <div class="modal-sub">Side-by-side with mechanistic analysis. Print for offline reference.</div>
+        </div>
+        <button class="modal-close" onclick="closeAllModals()">×</button>
+      </div>
+      <div class="modal-body">
+        <div class="compare-grid">${cols}</div>
+        <div class="compare-narration">${narration}</div>
+        <div class="cost-calc">
+          <div class="cost-calc-title">Cost per effective dose (input ₹/serving)</div>
+          ${costRows}
+          <div style="font-size:11px;color:var(--ink-3);margin-top:10px;line-height:1.5">Effective sodium dose = the amount that meaningfully replaces typical sweat loss for the use case. Cost-per-effective-dose normalizes against required serving count.</div>
+        </div>
+        <div style="margin-top:16px;display:flex;gap:8px;justify-content:flex-end">
+          <button class="btn btn-ghost" onclick="window.print()">Print / Save as PDF</button>
+          <button class="btn btn-primary" onclick="closeAllModals()">Done</button>
+        </div>
+      </div>
+    </div>`;
+  showModal(html);
+}
+function generateNarration(items){
+  const naMax = items.reduce((a,b)=>a.na>b.na?a:b);
+  const naMin = items.reduce((a,b)=>a.na<b.na?a:b);
+  const mgGap = items.filter(p=>p.mg===0 && p.k>=200);
+  const sugarHigh = items.filter(p=>p.sugar>=10);
+  const sugarLow = items.filter(p=>p.sugar===0);
+  const sgltYes = items.filter(p=>p.sgl==='Yes');
+  let parts = [];
+  parts.push(`<strong>${naMax.name}</strong> has the most sodium (${naMax.na}mg) — best for heavy sweat loss. <strong>${naMin.name}</strong> has the least (${naMin.na}mg) — better for daily/low-intensity use.`);
+  if(mgGap.length){
+    parts.push(`<strong>K without Mg gap:</strong> ${mgGap.map(p=>p.name).join(', ')} contain potassium but zero magnesium. The Na/K-ATPase pump can't fully utilize that K — Mg²⁺ is the obligate cofactor (Apell 2017).`);
+  }
+  if(sgltYes.length && sugarLow.length){
+    parts.push(`<strong>Acute illness vs daily use trade-off:</strong> ${sgltYes.map(p=>p.name).join(', ')} can activate SGLT1 cotransport (sugar present) — better for damaged-gut rehydration. ${sugarLow.map(p=>p.name).join(', ')} are zero-sugar — better for daily/athletic use due to faster gastric emptying (Rowlands 2021).`);
+  }
+  if(sugarHigh.length){
+    parts.push(`<strong>Sugar caution:</strong> ${sugarHigh.map(p=>p.name+' ('+p.sugar+'g)').join(', ')} contain ≥10g sugar per serving — verify diabetes/glycemic context before recommending.`);
+  }
+  return parts.join(' ');
+}
+function calcCost(){
+  COMPARE.forEach(id=>{
+    const p = PRODUCTS.find(x=>x.id===id);
+    if(!p) return;
+    const inp = document.getElementById('cost-'+id);
+    const res = document.getElementById('costres-'+id);
+    if(!inp || !res) return;
+    const cost = parseFloat(inp.value);
+    if(isNaN(cost) || cost<=0){ res.textContent = '—'; return; }
+    // Cost per 100mg sodium delivered
+    const naServ = p.na;
+    const costPer100mg = (cost / (naServ/100)).toFixed(2);
+    res.textContent = `₹${costPer100mg}/100mg Na`;
+  });
+}
+
+// ============ HYDRATION MATCHER ============
+const MATCHER = {step:1,situation:null,constraints:[],duration:60};
+const SITUATIONS = [
+  {id:'illness',icon:'🤒',name:"I'm sick (diarrhea/vomiting)"},
+  {id:'exercise',icon:'🏃',name:"I'm exercising"},
+  {id:'heat',icon:'☀️',name:'Working in heat'},
+  {id:'daily',icon:'💧',name:'Daily hydration'},
+  {id:'recovery',icon:'🛌',name:'Post-illness recovery'}
+];
+function openMatcher(){
+  MATCHER.step=1;MATCHER.situation=null;MATCHER.constraints=[];MATCHER.duration=60;
+  renderMatcher();
+}
+function renderMatcher(){
+  const dots = [1,2,3].map(n=>`<div class="matcher-dot ${MATCHER.step===n?'active':MATCHER.step>n?'done':''}"></div>`).join('');
+  let body = '';
+  if(MATCHER.step===1){
+    body = `<div class="matcher-step">
+      <h3>What's your situation?</h3>
+      <div class="matcher-help">Pick the closest match. We'll narrow the recommendation in the next step.</div>
+      <div class="situation-grid">${SITUATIONS.map(s=>`<div class="situation-card ${MATCHER.situation===s.id?'selected':''}" onclick="selectSituation('${s.id}')">
+        <div class="situation-icon">${s.icon}</div>
+        <div class="situation-name">${s.name}</div>
+      </div>`).join('')}</div>
+      <div class="matcher-actions">
+        <button class="btn btn-ghost" onclick="closeAllModals()">Cancel</button>
+        <button class="btn btn-primary" id="matcherNext1" onclick="nextMatcherStep()" ${MATCHER.situation?'':'disabled'}>Next</button>
+      </div>
+    </div>`;
+  } else if(MATCHER.step===2){
+    body = `<div class="matcher-step">
+      <h3>Any constraints?</h3>
+      <div class="matcher-help">Optional. We'll filter out anything that's contraindicated for you.</div>
+      <div class="constraint-pills">${[
+        ['diabetes','Diabetes'],['ckd','Kidney disease'],['hypertension','Hypertension'],
+        ['lactose','Lactose intolerant'],['keto','Keto / low-carb']
+      ].map(([id,name])=>`<button class="constraint-pill ${MATCHER.constraints.includes(id)?'selected':''}" onclick="toggleConstraint('${id}',this)">${name}</button>`).join('')}</div>
+      <div class="matcher-actions">
+        <button class="btn btn-ghost" onclick="prevMatcherStep()">Back</button>
+        <button class="btn btn-primary" onclick="nextMatcherStep()">Next</button>
+      </div>
+    </div>`;
+  } else if(MATCHER.step===3){
+    const label = MATCHER.situation==='illness' ? 'How severe?' : MATCHER.situation==='exercise' ? 'Duration (minutes)' : MATCHER.situation==='heat' ? 'Hours in heat' : 'Days';
+    const max = MATCHER.situation==='exercise' ? 240 : 12;
+    body = `<div class="matcher-step">
+      <h3>${label}</h3>
+      <div class="matcher-help">Slide to estimate intensity/duration.</div>
+      <div class="duration-slider">
+        <input type="range" min="1" max="${max}" value="${Math.min(MATCHER.duration, max)}" oninput="MATCHER.duration=parseInt(this.value);document.getElementById('durLbl').textContent=this.value">
+        <div style="text-align:center;font-family:'Source Serif Pro',serif;font-size:24px;color:var(--primary);margin-top:8px"><span id="durLbl">${Math.min(MATCHER.duration, max)}</span> ${MATCHER.situation==='heat'?'hours':MATCHER.situation==='exercise'?'min':MATCHER.situation==='daily'?'days':'rating'}</div>
+      </div>
+      <div class="matcher-actions">
+        <button class="btn btn-ghost" onclick="prevMatcherStep()">Back</button>
+        <button class="btn btn-primary" onclick="finishMatcher()">Find my hydration →</button>
+      </div>
+    </div>`;
+  }
+  showModal(`<div class="modal">
+    <div class="modal-head">
+      <div>
+        <div class="modal-title">Hydration Matcher</div>
+        <div class="modal-sub">Step ${MATCHER.step} of 3</div>
+      </div>
+      <button class="modal-close" onclick="closeAllModals()">×</button>
+    </div>
+    <div class="matcher-progress">${dots}</div>
+    ${body}
+  </div>`);
+}
+function selectSituation(id){
+  MATCHER.situation = id;
+  document.querySelectorAll('.situation-card').forEach(c=>c.classList.remove('selected'));
+  event.currentTarget.classList.add('selected');
+  document.getElementById('matcherNext1').disabled = false;
+}
+function toggleConstraint(id, btn){
+  const i = MATCHER.constraints.indexOf(id);
+  if(i>=0){ MATCHER.constraints.splice(i,1); btn.classList.remove('selected'); }
+  else { MATCHER.constraints.push(id); btn.classList.add('selected'); }
+}
+function nextMatcherStep(){ MATCHER.step++; renderMatcher(); }
+function prevMatcherStep(){ MATCHER.step--; renderMatcher(); }
+function finishMatcher(){
+  // Score products against situation + constraints
+  const ranked = PRODUCTS.map(p=>{
+    let score = 0;
+    let why = [];
+    // Situation match
+    if(p.use.includes(MATCHER.situation)){ score += 50; }
+    // Penalize if constrained
+    if(p.constraints.some(c=>MATCHER.constraints.includes(c))){ score -= 200; }
+    // Situation-specific scoring
+    if(MATCHER.situation==='illness'){
+      if(p.sgl==='Yes'){ score += 30; why.push('SGLT1 cotransport works in compromised gut'); }
+      if(p.cat==='clinical'){ score += 30; why.push('clinically-tested formulation'); }
+    } else if(MATCHER.situation==='exercise'){
+      if(p.tonicity==='hypotonic' && p.sugar<5){ score += 25; why.push('hypotonic + low sugar = fast gastric emptying'); }
+      if(p.na>=400){ score += 15; why.push('sufficient sodium for sweat replacement'); }
+      if(p.sugar>=15 && MATCHER.duration>90){ score += 20; why.push('carb fueling for >90min effort'); }
+    } else if(MATCHER.situation==='heat'){
+      if(p.na>=400){ score += 25; why.push('high sodium for heat-stress sweat losses'); }
+      if(p.id==='osmo'){ score += 15; why.push('taurine supports cellular volume in heat (PMC12943169)'); }
+      if(p.k>=200){ score += 10; why.push('K supports muscle electrical signalling'); }
+    } else if(MATCHER.situation==='daily'){
+      if(p.sugar===0){ score += 20; why.push('zero sugar suits daily/desk use'); }
+      if(p.tonicity==='hypotonic'){ score += 10; }
+      if(p.na<=400 && p.na>=200){ score += 10; why.push('moderate sodium suits non-active daily use'); }
+    } else if(MATCHER.situation==='recovery'){
+      if(p.sgl==='Yes' || p.sgl==='Partial'){ score += 20; why.push('glucose-mediated absorption helps gut recovery'); }
+      if(p.k>=200){ score += 10; why.push('K replenishes after illness'); }
+    }
+    return {p, score, why};
+  })
+  .filter(r=>r.score>0)
+  .sort((a,b)=>b.score-a.score)
+  .slice(0,5);
+  const html = `<div class="modal modal-large">
+    <div class="modal-head">
+      <div>
+        <div class="modal-title">Your top matches</div>
+        <div class="modal-sub">${SITUATIONS.find(s=>s.id===MATCHER.situation).name}${MATCHER.constraints.length?' · with constraints: '+MATCHER.constraints.join(', '):''}</div>
+      </div>
+      <button class="modal-close" onclick="closeAllModals()">×</button>
+    </div>
+    <div class="modal-body">
+      ${ranked.length===0 ? '<div class="alert-box"><strong>No safe matches.</strong> Your constraints exclude all catalogued products. Consult a doctor or healthcare provider.</div>' : ranked.map((r,i)=>`
+        <div class="match-result">
+          <div class="match-name"><span class="match-rank">${i+1}</span>${r.p.name}</div>
+          <div class="match-why"><strong>Why this works for you:</strong> ${r.why.length?r.why.join('; ')+'.':'Matches your situation overall.'}</div>
+          <div class="match-stats">
+            <span>Na: ${r.p.na}mg</span>
+            <span>K: ${r.p.k}mg</span>
+            <span>Mg: ${r.p.mg}mg</span>
+            <span>Sugar: ${r.p.sugar}g</span>
+            <span>Evidence: ${r.p.ev}</span>
+          </div>
+          <div style="margin-top:10px"><button class="btn btn-ghost" onclick="closeAllModals();openDetail('${r.p.id}')" style="font-size:12px;padding:6px 12px">View full details</button></div>
+        </div>`).join('')}
+      ${MATCHER.situation==='illness' ? '<div class="alert-box" style="margin-top:14px"><strong>When to see a doctor:</strong> Severe dehydration signs (no urination >8h, sunken eyes, lethargy, confusion), bloody stool, fever >39°C, or symptoms persisting >48h require immediate medical care. Oral rehydration is adjunct, not substitute.</div>' : ''}
+    </div>
+  </div>`;
+  showModal(html);
+}
+
+// ============ INDIA DASHBOARD ============
+function buildCitySelect(){
+  const sel = document.getElementById('citySelect');
+  sel.innerHTML = Object.entries(CITIES).map(([k,v])=>`<option value="${k}">${v.name}</option>`).join('');
+}
+function renderIndiaDashboard(){
+  const key = document.getElementById('citySelect').value;
+  const c = CITIES[key];
+  const riskColor = ({low:'wbgt-low',med:'wbgt-med',high:'wbgt-high',extreme:'wbgt-extreme'})[c.risk];
+  const riskLabel = ({low:'Safe',med:'Caution',high:'High risk',extreme:'Extreme — restrict outdoor work'})[c.risk];
+  const wbgtBarPct = Math.min((c.wbgt/40)*100, 100);
+  const wbgtBarColor = c.risk==='low'?'var(--ev-high)':c.risk==='med'?'var(--ev-med)':'var(--alert)';
+  const fluidRec = c.risk==='low' ? '2-3L over 8 hours' : c.risk==='med' ? '3-4L with electrolytes after 4h work' : c.risk==='high' ? '4-6L with electrolytes; mandatory rest breaks every 90min' : '6-8L with electrolytes; restrict outdoor work to <2h, mandatory shade';
+  const productRec = c.risk==='low' ? 'Plain water + salty snacks adequate' : c.risk==='med' ? 'Sattu drink, chaas, or 200-400mg Na electrolyte product' : 'WHO-formula electrolyte (Electral diluted), or commercial 500mg+ Na product (Supply6, LMNT, PH 1500)';
+  const html = `
+    <div class="india-card">
+      <div class="india-card-title">Today's heat risk · ${c.name}</div>
+      <div class="wbgt-display"><span class="wbgt-num ${riskColor}">${c.wbgt}</span><span class="wbgt-unit">°C WBGT</span></div>
+      <div class="wbgt-label ${riskColor}">${riskLabel}</div>
+      <div class="wbgt-bar"><div class="wbgt-bar-fill" style="width:${wbgtBarPct}%;background:${wbgtBarColor}"></div></div>
+      <div style="font-size:12px;color:var(--ink-3);margin-top:4px">Air temp ${c.temp}°C · Humidity ${c.humidity}%</div>
+    </div>
+    <div class="india-card">
+      <div class="india-card-title">Today's fluid recommendation</div>
+      <ul class="recommend-list">
+        <li>Volume: ${fluidRec}</li>
+        <li>Best products for ${c.name} today: ${productRec}</li>
+        <li>Avoid: plain water alone (>2h heat exposure risks hyponatremia)</li>
+        <li>Heat-acclimatised workers need 7-14 days adaptation; new workers more vulnerable</li>
+      </ul>
+    </div>
+    <div class="india-card">
+      <div class="india-card-title">India regulatory status (May 2026)</div>
+      <div class="regulatory-list">
+        <div class="regulatory-item"><div class="reg-icon ok">✓</div><div><strong>FSSAI HFSS labels</strong> — front-of-pack warnings active for sugar/salt/fat (July 2024)</div></div>
+        <div class="regulatory-item"><div class="reg-icon warn">!</div><div><strong>ORS label restriction</strong> — only WHO-formula products may use "ORS" (Oct 2025; Delhi HC upheld Nov 2025)</div></div>
+        <div class="regulatory-item"><div class="reg-icon warn">!</div><div><strong>Sports drink sugar limit</strong> — should not exceed 10g/100mL</div></div>
+        <div class="regulatory-item"><div class="reg-icon ok">✓</div><div><strong>Caffeine declaration</strong> — required on energy drinks (145-300mg/L cap)</div></div>
+      </div>
+    </div>
+    <div class="india-card">
+      <div class="india-card-title">Worker access note</div>
+      <div style="font-size:13px;color:var(--ink-2);line-height:1.65">
+        <strong>Cost-per-day for outdoor worker:</strong> A 4L hydration day with WHO ORS-equivalent costs ~₹40-60. Sattu drink (homemade) costs ~₹15-25. Branded sports drinks (Gatorade etc.) cost ₹120-200. <br><br>
+        <strong>For employer/contractor sourcing:</strong> Bulk Electral or Enerzal sachets, salt + cumin + lemon for sattu drink stations, and shaded rest areas every 90 minutes are the highest-leverage interventions.
+      </div>
+    </div>`;
+  document.getElementById('indiaDashboard').innerHTML = html;
+}
+
+// ============ Q&A WIDGET / CHAT ============
+let chatHistory = [];
+function expandQA(){
+  document.getElementById('qaWidget').classList.add('expanded');
+}
+function askQ(text){
+  document.getElementById('qaInput').value = text;
+  sendChat();
+}
+async function sendChat(){
+  const input = document.getElementById('qaInput');
+  const send = document.getElementById('qaSend');
+  const q = input.value.trim();
+  if(!q) return;
+  toggleChatOverlay(true);
+  const body = document.getElementById('chatBody');
+  const userMsg = document.createElement('div');
+  userMsg.className = 'chat-msg user';
+  userMsg.textContent = q;
+  body.appendChild(userMsg);
+  input.value='';
+  send.disabled = true;
+  const typing = document.createElement('div');
+  typing.className = 'typing';
+  typing.textContent = 'Thinking...';
+  body.appendChild(typing);
+  body.scrollTop = body.scrollHeight;
+  try{
+    chatHistory.push({role:'user',content:q});
+    const res = await fetch(CHAT_API_URL,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({history:chatHistory})});
+    const text = await res.text();
+    let data;
+    try{ data = JSON.parse(text); } catch{ data = {error: res.status===504?'Server timeout — try a shorter question.':'Server error (HTTP '+res.status+').'}; }
+    typing.remove();
+    const botMsg = document.createElement('div');
+    botMsg.className = 'chat-msg bot';
+    if(data.error){ botMsg.innerHTML = '<strong>Error:</strong> '+data.error; }
+    else if(!data.reply){ botMsg.innerHTML = '<strong>Empty response.</strong> Try again.'; }
+    else { botMsg.innerHTML = mdToHTML(data.reply); chatHistory.push({role:'assistant',content:data.reply}); }
+    body.appendChild(botMsg);
+    body.scrollTop = body.scrollHeight;
+  } catch(err){
+    typing.remove();
+    const botMsg = document.createElement('div');
+    botMsg.className = 'chat-msg bot';
+    botMsg.innerHTML = '<strong>Connection error.</strong> Check your network.';
+    body.appendChild(botMsg);
+  } finally {
+    send.disabled = false;
+    input.focus();
+  }
+}
+function toggleChatOverlay(show){
+  document.getElementById('chatOverlay').classList.toggle('show', show);
+}
+
+// ============ PAPER MODAL ============
+let currentPaperMD = '';
+function openPaperModal(){
+  currentPaperMD = '';
+  const html = `<div class="modal modal-large">
+    <div class="modal-head">
+      <div>
+        <div class="modal-title">Generate Clinical Research Paper</div>
+        <div class="modal-sub">1-page paper on any hydration topic, sourced from the database</div>
+      </div>
+      <button class="modal-close" onclick="closeAllModals()">×</button>
+    </div>
+    <div class="paper-input-row">
+      <input type="text" class="paper-input" id="paperInputModal" placeholder="Topic — e.g. 'Magnesium and exercise performance'" onkeypress="if(event.key==='Enter')generatePaper()">
+      <button class="btn btn-primary" id="paperGenerateBtn" onclick="generatePaper()">Generate</button>
+    </div>
+    <div class="paper-body-content" id="paperBodyContent">
+      <div class="paper-empty">
+        <div class="paper-empty-icon">📄</div>
+        <div class="paper-empty-title">What topic?</div>
+        <div>Type above and the database will generate a structured 1-page clinical paper. Typical generation time: 6-10 seconds.</div>
+        <div class="paper-suggest">
+          <button class="paper-suggest-btn" onclick="suggestPaperTopic('Sodium replacement strategies for endurance athletes in tropical climates')">Sodium for endurance in the tropics</button>
+          <button class="paper-suggest-btn" onclick="suggestPaperTopic('The role of magnesium in muscle cramp prevention')">Magnesium and muscle cramps</button>
+          <button class="paper-suggest-btn" onclick="suggestPaperTopic('Coconut water as a clinical rehydration agent')">Coconut water as rehydration</button>
+          <button class="paper-suggest-btn" onclick="suggestPaperTopic('SGLT1 cotransport and oral rehydration in paediatric diarrhea')">SGLT1 in paediatric ORT</button>
+        </div>
+      </div>
+    </div>
+    <div class="paper-actions" id="paperActionsRow" style="display:none">
+      <button class="btn btn-ghost" onclick="copyPaperMD()">Copy markdown</button>
+      <button class="btn btn-ghost" onclick="window.print()">Print / Save as PDF</button>
+    </div>
+  </div>`;
+  showModal(html);
+}
+function suggestPaperTopic(t){
+  document.getElementById('paperInputModal').value = t;
+  generatePaper();
+}
+async function generatePaper(){
+  const input = document.getElementById('paperInputModal');
+  const btn = document.getElementById('paperGenerateBtn');
+  const body = document.getElementById('paperBodyContent');
+  const actions = document.getElementById('paperActionsRow');
+  const topic = input.value.trim();
+  if(!topic) return;
+  body.innerHTML = `<div class="paper-loading">Generating paper on <strong>${topic.replace(/</g,'&lt;')}</strong>... 6-10 seconds.</div>`;
+  actions.style.display = 'none';
+  btn.disabled = true;
+  try{
+    const res = await fetch(CHAT_API_URL,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({mode:'paper',history:[{role:'user',content:'Generate a clinical research paper on this topic: '+topic}]})});
+    const text = await res.text();
+    let data;
+    try{ data = JSON.parse(text); }
+    catch{
+      if(res.status===504){ body.innerHTML='<div class="paper-loading"><strong>Server timeout.</strong> Try a more specific topic.</div>'; }
+      else { body.innerHTML='<div class="paper-loading"><strong>Server error (HTTP '+res.status+').</strong> Check Cloudflare Worker logs: <code>wrangler tail</code>.</div>'; }
+      return;
+    }
+    if(data.error){ body.innerHTML = '<div class="paper-loading"><strong>Error:</strong> '+data.error+'</div>'; }
+    else if(!data.reply){ body.innerHTML = '<div class="paper-loading">Empty response. Try again.</div>'; }
+    else { currentPaperMD = data.reply; body.innerHTML = mdToHTML(data.reply); actions.style.display = 'flex'; }
+  } catch(err){
+    body.innerHTML = '<div class="paper-loading"><strong>Connection error.</strong> Check your network.</div>';
+  } finally {
+    btn.disabled = false;
+  }
+}
+function copyPaperMD(){
+  if(!currentPaperMD) return;
+  navigator.clipboard.writeText(currentPaperMD);
+}
+
+// ============ MD → HTML ============
+function mdToHTML(md){
+  let s = String(md||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+  s = s.replace(/\*\*([^*]+?)\*\*/g,'<strong>$1</strong>');
+  s = s.replace(/(?<!\*)\*([^*\n]+?)\*(?!\*)/g,'<em>$1</em>');
+  s = s.replace(/`([^`]+?)`/g,'<code>$1</code>');
+  const lines = s.split('\n'); const out=[]; let inList=null;
+  const closeList = ()=>{ if(inList){ out.push('</'+inList+'>'); inList=null; } };
+  for(const raw of lines){
+    const t = raw.trim();
+    if(/^### /.test(t)){ closeList(); out.push('<h3>'+t.slice(4)+'</h3>'); }
+    else if(/^## /.test(t)){ closeList(); out.push('<h2>'+t.slice(3)+'</h2>'); }
+    else if(/^# /.test(t)){ closeList(); out.push('<h1>'+t.slice(2)+'</h1>'); }
+    else if(/^[-*] /.test(t)){ if(inList!=='ul'){ closeList(); out.push('<ul>'); inList='ul'; } out.push('<li>'+t.slice(2)+'</li>'); }
+    else if(/^\d+\.\s/.test(t)){ if(inList!=='ol'){ closeList(); out.push('<ol>'); inList='ol'; } out.push('<li>'+t.replace(/^\d+\.\s/,'')+'</li>'); }
+    else if(/^---+$/.test(t)){ closeList(); out.push('<hr>'); }
+    else if(t===''){ closeList(); out.push(''); }
+    else { closeList(); out.push('<p>'+t+'</p>'); }
+  }
+  closeList();
+  return out.join('\n');
+}
+
+// ============ MODAL ============
+function showModal(html){
+  const back = document.getElementById('modalBackdrop');
+  back.innerHTML = html;
+  back.classList.add('show');
+  document.body.style.overflow = 'hidden';
+}
+function closeAllModals(){
+  document.getElementById('modalBackdrop').classList.remove('show');
+  document.body.style.overflow = '';
+}
+document.addEventListener('keydown', e=>{ if(e.key==='Escape') closeAllModals(); });
+
+// ============ MOBILE NAV / FILTER ============
+function toggleMobileNav(){
+  document.getElementById('mainNav').classList.toggle('show-mobile');
+}
+function toggleMobileFilters(){
+  document.getElementById('filtersPanel').classList.toggle('show-mobile');
+}
+
+// ============ SCROLL PROGRESS ============
+function setupScrollProgress(){
+  window.addEventListener('scroll', ()=>{
+    const scrolled = window.scrollY;
+    const max = document.documentElement.scrollHeight - window.innerHeight;
+    const pct = max>0 ? (scrolled/max)*100 : 0;
+    document.getElementById('scrollProgress').style.width = pct+'%';
+  }, {passive:true});
+}
+
+// ============ PATHWAYS DATA ============
+const PW_PRODUCTS = ["WHO ORS","Electral","Ringer's LR","Normal Saline","LMNT","PH 1500","PH 1000","Nuun Sport","Gatorade","Pocari Sweat","Liquid I.V.","Osmo","Supply6","Fast&Up","Coconut water","Chaas","Nimbu pani","Aam panna","Plain water"];
+const PW_META = {"WHO ORS":{cat:"Clinical"},"Electral":{cat:"Clinical (India)"},"Ringer's LR":{cat:"Clinical IV"},"Normal Saline":{cat:"Clinical IV"},"LMNT":{cat:"Global Sports"},"PH 1500":{cat:"Global Sports"},"PH 1000":{cat:"Global Sports"},"Nuun Sport":{cat:"Global Sports"},"Gatorade":{cat:"Mass Market"},"Pocari Sweat":{cat:"Mass Market"},"Liquid I.V.":{cat:"Indian DTC"},"Osmo":{cat:"Indian DTC"},"Supply6":{cat:"Indian DTC"},"Fast&Up":{cat:"Indian DTC"},"Coconut water":{cat:"Traditional"},"Chaas":{cat:"Traditional"},"Nimbu pani":{cat:"Traditional"},"Aam panna":{cat:"Traditional"},"Plain water":{cat:"Baseline"}};
+function ps(arr){const o={};PW_PRODUCTS.forEach((p,i)=>o[p]=arr[i]);return o}
+const FW_A = [
+  {name:"Osmotic gradient",desc:"Na and Cl create a concentration differential between gut lumen and bloodstream — water follows passively. Primary mechanism for ALL oral rehydration.",keys:"Sodium + Chloride",w:30,evl:"High",clinical:"Why WHO ORS and IV saline work — Na is the anchor.",scores:ps([100,100,100,100,90,90,85,70,80,75,85,80,95,50,60,40,55,60,0])},
+  {name:"SGLT1 cotransport",desc:"2 Na+ + 1 glucose transported simultaneously through SGLT1; hundreds of water molecules follow per cycle. Intact even when gut is compromised by rotavirus. Requires BOTH Na AND glucose.",keys:"Sodium + Glucose",w:25,evl:"High",clinical:"Most critical for acute illness. Why WHO ORS works in cholera. Zero-sugar products score 0% — structural trade-off.",scores:ps([100,100,0,0,0,5,5,5,85,80,90,0,0,20,75,10,30,35,0])},
+  {name:"Gastric emptying",desc:"How quickly fluid leaves stomach for absorption. Hypotonic empties faster than isotonic/hypertonic. High sugar slows emptying. Rowlands 2021 (28 studies): hypotonic superior plasma volume retention.",keys:"Hypotonic osmolality",w:20,evl:"High",clinical:"Why zero-sugar hypotonic wins for athletic/daily hydration.",scores:ps([75,75,100,100,100,95,95,90,55,50,65,100,100,85,60,70,65,45,100])},
+  {name:"Aquaporin AQP1",desc:"Protein water channels in intestinal cells. Zinc controls AQP3/AQP7 gene expression. Calcium drives AQP vesicle trafficking to membrane.",keys:"Zinc + Calcium",w:15,evl:"High",clinical:"Often overlooked — without functional AQP channels, transcellular water absorption is significantly limited.",scores:ps([20,20,30,0,0,20,20,40,0,30,0,85,0,30,40,35,10,10,0])},
+  {name:"Paracellular flow",desc:"Water moves between intestinal cells via Ca-dependent claudin/occludin tight junctions. Secondary to AQP-mediated transcellular transport.",keys:"Calcium",w:10,evl:"Medium",clinical:"Secondary pathway — most relevant when transcellular mechanisms are saturated.",scores:ps([0,0,30,0,0,20,20,25,0,25,0,70,0,25,45,50,10,10,0])}
+];
+const FW_B = [
+  {name:"Na/K-ATPase pump",desc:"Master active transporter on every cell. Moves 3 Na+ out, 2 K+ in per cycle. Requires Mg2+ as obligate cofactor — pump cannot function without Mg regardless of K (Apell 2017). Exercise depletes intracellular K ~21mM.",keys:"K (substrate) + Mg (cofactor) + ATP",w:35,evl:"High",clinical:"THE critical insight for K-without-Mg products. Liquid I.V. (370mg K + 0mg Mg): pump can't use K efficiently.",scores:ps([40,40,30,0,75,30,30,40,20,25,30,95,65,35,70,45,20,25,0])},
+  {name:"Intracellular K+ gradient",desc:"Electrical gradient between high intracellular K+ and low extracellular K+ powers nerve impulses and muscle contractions. Recovery requires K+ AND functional Na/K-ATPase.",keys:"K + Mg",w:20,evl:"High",clinical:"Why muscles cramp even when athletes feel hydrated — water is in the body but K/Mg gradient is gone.",scores:ps([50,50,20,0,70,40,40,50,25,35,35,85,55,30,80,55,20,25,0])},
+  {name:"Organic osmolyte (taurine)",desc:"Under heat/exercise stress, cells accumulate taurine to match extracellular osmolality. Prevents cell volume loss. PMC12943169 (2026): taurine ~0.3-0.4°C core temp reduction; sweat rate +8-15%. NOT a cognitive enhancer (2025 meta-analysis).",keys:"Taurine",w:20,evl:"Medium",clinical:"Most relevant for heat exposure, prolonged exercise. Not for desk workers.",scores:ps([0,0,0,0,0,0,0,0,0,0,0,90,0,0,10,10,5,5,0])},
+  {name:"ATP availability",desc:"All active transport requires ATP. Mg-ATP is actual substrate. B1 (thiamine) gates Krebs cycle (pyruvate entry). B3 produces NAD+ for oxidative phosphorylation.",keys:"Mg + B1 + B3",w:15,evl:"High",clinical:"Why B1 is uniquely important and absent from most products.",scores:ps([0,0,0,0,30,10,10,20,0,0,20,90,0,25,15,20,5,10,0])},
+  {name:"AQP3/AQP7 cellular",desc:"Aquaporin channels at cellular level. Zinc controls gene expression. Calcium drives trafficking.",keys:"Zinc + Calcium",w:10,evl:"Medium",clinical:"Tissue-level water permeability. Most relevant for cellular hydration, heat stress, muscle recovery.",scores:ps([0,0,30,0,0,20,20,40,0,25,0,85,30,30,40,35,10,10,0])}
+];
+const FW_C = [
+  {name:"ADH / aldosterone axis",desc:"Plasma osmolality rises (Na-driven) → hypothalamic osmoreceptors trigger ADH → kidneys insert AQP2 → water reabsorption. Without Na, this entire system is suppressed.",keys:"Sodium (osmoreceptor)",w:35,evl:"High",clinical:"Mechanistic explanation for water-alone-in-heat causing dehydration. The 'water intoxication' mechanism.",scores:ps([100,100,100,100,100,100,95,80,75,70,85,85,100,55,55,45,55,55,0])},
+  {name:"Renal AQP2 insertion",desc:"ADH drives AQP2 channels in kidney collecting duct, dramatically increasing water recapture. Without Na→ADH signal, water is freely excreted.",keys:"Sodium → ADH → AQP2",w:30,evl:"High",clinical:"Why SIADH retains too much water; why diabetes insipidus causes massive losses. Sports/heat: Na signals body to keep water.",scores:ps([100,100,100,100,100,100,95,80,75,70,85,85,100,55,50,40,50,50,0])},
+  {name:"Thirst mechanism",desc:"Osmoreceptors respond to plasma osmolality changes as small as 2 mOsm/L. Sodium is primary driver. Calibrates against under- and over-hydration.",keys:"Sodium",w:15,evl:"High",clinical:"Why marathon runners get hyponatremia — too much plain water dilutes Na, osmoreceptors misread.",scores:ps([100,100,100,100,100,100,95,80,70,65,80,80,100,50,50,40,50,50,0])},
+  {name:"Mineral retention (boron)",desc:"Boron 3mg/day inhibits renal Mg/Ca excretion. PMC4712861 (USDA, n=12): 3mg boron reduced urinary Ca excretion 44%. Amplifies effective Mg dose more than adding 20mg extra Mg.",keys:"Boron 3mg",w:10,evl:"Medium",clinical:"Why label dose ≠ retained dose. Most under-discussed ingredient. Only Osmo includes it.",scores:ps([0,0,0,0,0,0,0,0,0,0,0,100,0,0,10,10,5,5,0])},
+  {name:"Blood pH homeostasis",desc:"Chloride supports bicarbonate exchange. Lactate (Ringer's) → bicarbonate, corrects acidosis. Boron supports pH via carbonic anhydrase.",keys:"Cl + Boron + Lactate",w:10,evl:"Medium",clinical:"Most relevant for trauma (Ringer's), intense exercise (lactic buffering), high altitude.",scores:ps([60,60,100,40,60,60,60,60,40,40,50,80,50,40,30,25,20,20,0])}
+];
+const FW_REF = [
+  {name:"Oncotic pressure (albumin)",desc:"Serum albumin keeps fluid in blood vessels. Synthesised by liver from dietary protein. Cannot be addressed by any electrolyte product.",keys:"Dietary protein → liver"},
+  {name:"Sweat duct Na reabsorption",desc:"Heat acclimatisation over 7-14 days trains sweat ducts to reabsorb more Na. Physiological adaptation only — no supplement accelerates it.",keys:"Training adaptation only"},
+  {name:"Glycogen-bound water",desc:"Each gram of stored glycogen holds ~3g water. Carb loading increases muscle water content. Requires carb strategy, not electrolytes.",keys:"Dietary carbohydrates"},
+  {name:"Vascular wall collagen",desc:"Vit C is cofactor for collagen synthesis. Without it, capillary fragility increases. Background maintenance.",keys:"Vitamin C → collagen"},
+  {name:"Lymphatic clearance",desc:"Interstitial fluid returns via lymphatic vessels — pressure-and-movement driven. Movement, massage, compression are interventions.",keys:"Physical movement only"},
+  {name:"Membrane phospholipid integrity",desc:"Cell membrane water permeability depends on phospholipid bilayer integrity. Antioxidants protect against oxidative damage.",keys:"Antioxidants (background)"},
+  {name:"Metabolic water (Krebs)",desc:"Mitochondrial ATP synthesis produces ~250-350ml metabolic water daily. Background process, not amplified by supplementation.",keys:"B-vitamins → Krebs (background)"},
+  {name:"Sweat gland activation",desc:"Individual sweat gland density and threshold are mostly genetic + acclimatisation. PMC12943169: taurine may modestly lower threshold (8-15%).",keys:"Genetics + training (partly taurine)"}
+];
+function calcFwScore(prod, framework){
+  let total=0, weighted=0;
+  framework.forEach(p=>{const s=p.scores[prod]||0; weighted+=s*p.w; total+=p.w});
+  return Math.round(weighted/total);
+}
+function calcComposite(prod){
+  const a=calcFwScore(prod,FW_A), b=calcFwScore(prod,FW_B), c=calcFwScore(prod,FW_C);
+  return {a,b,c, comp:Math.round(a*0.40+b*0.35+c*0.25)};
+}
+function buildFw(view, framework, intro){
+  const v = document.getElementById(view);
+  const layHTML = intro.lay ? `<div class="lay-callout"><span class="lay-callout-icon">💡</span><div class="lay-callout-body"><span class="lay-callout-label">In plain English</span><div class="lay-callout-text"><em>${intro.lay}</em></div></div></div>` : '';
+  const introHTML = `<div class="fw-intro"><strong>${intro.title}</strong> ${intro.body}</div>` + layHTML;
+  const tableRows = framework.map(p=>`<div class="fw-row">
+    <div>
+      <div class="fw-row-name">${p.name}</div>
+      <div class="fw-row-desc">${wrapTerms(p.desc)}</div>
+      <div class="fw-row-clinical"><strong>Clinical insight:</strong> ${wrapTerms(p.clinical)}</div>
+    </div>
+    <div class="fw-row-keys">${p.keys}</div>
+    <div><span class="badge ${p.evl==='High'?'high':'med'}">${p.evl}</span></div>
+    <div class="fw-row-wt">${p.w}%</div>
+  </div>`).join('');
+  const table = `<div class="fw-table"><div class="fw-row-hdr"><div>Pathway + mechanism + clinical insight</div><div>Key ingredient(s)</div><div>Evidence</div><div style="text-align:right">Weight</div></div>${tableRows}</div>`;
+  const chips = PW_PRODUCTS.map(prod=>{
+    const sc = calcFwScore(prod, framework);
+    const meta = PW_META[prod]||{cat:''};
+    const barColor = sc>75?'var(--ev-high)':sc>45?'var(--ev-med)':'var(--alert)';
+    return `<div class="fw-chip"><span class="fw-chip-val">${sc}%</span><div class="fw-chip-bar"><div class="fw-chip-bar-fill" style="background:${barColor};width:${sc}%"></div></div><span class="fw-chip-name">${prod}</span><span class="fw-chip-cat">${meta.cat}</span></div>`;
+  }).join('');
+  const chipsBlock = `<div class="fw-chips-wrap"><div class="fw-chips-title">Product coverage on this framework</div><div class="fw-chip-grid">${chips}</div></div>`;
+  v.innerHTML = introHTML + table + chipsBlock;
+}
+function buildFwRef(){
+  const v = document.getElementById('fw-ref-view');
+  const intro = `<div class="fw-intro" style="background:var(--ev-low-bg);color:var(--ink-2);border-color:var(--border)"><strong>Biological Reference Pathways</strong> — these mechanisms are real and important, but cannot be meaningfully supplemented by any electrolyte product. Documented for completeness and to prevent overclaiming. No product scores on these.</div>`;
+  const lay = `<div class="lay-callout"><span class="lay-callout-icon">💡</span><div class="lay-callout-body"><span class="lay-callout-label">In plain English</span><div class="lay-callout-text"><em>Important biology that NO drink can fix. These pathways depend on diet, training, time, or doctor-treated conditions. If a brand claims to "address" any of these, that's a marketing red flag.</em></div></div></div>`;
+  const rows = FW_REF.map(p=>`<div class="fw-ref-row">
+    <div><div class="fw-row-name">${p.name}</div><div class="fw-row-desc">${wrapTerms(p.desc)}</div></div>
+    <div><span class="badge low">Outside scope</span><div class="fw-row-keys" style="margin-top:6px">${p.keys}</div></div>
+  </div>`).join('');
+  v.innerHTML = intro + lay + `<div class="fw-table">${rows}</div>`;
+}
+function buildFwScore(){
+  const v = document.getElementById('fw-score-view');
+  const intro = `<div class="fw-intro" style="background:var(--ev-mixed-bg);color:var(--ev-mixed);border-color:var(--ev-mixed)"><strong>Composite scores</strong> — Weighted average across all three frameworks (A×40% + B×35% + C×25%). Reflects coverage of biologically activatable pathways only. No product reaches 100% — SGLT1 + zero-sugar are incompatible by design.</div>` + `<div class="lay-callout"><span class="lay-callout-icon">💡</span><div class="lay-callout-body"><span class="lay-callout-label">In plain English</span><div class="lay-callout-text"><em>One number combining all three frameworks. No product scores 100% — every formulation has trade-offs. A high score for "absorbs fast" usually means a low score for "good for daily use" and vice versa. Use this to see who's strongest where, not as a single ranking.</em></div></div></div>`;
+  const scored = PW_PRODUCTS.map(p=>({p,...calcComposite(p)})).sort((a,b)=>b.comp-a.comp);
+  const rows = scored.map(({p,a,b,c,comp})=>{
+    const meta = PW_META[p]||{cat:''};
+    const sc = {A:a,B:b,C:c};
+    const strong = Object.entries(sc).sort((x,y)=>y[1]-x[1])[0];
+    const weak = Object.entries(sc).sort((x,y)=>x[1]-y[1])[0];
+    const compClass = comp>70?'high':comp>40?'med':'low';
+    return `<tr>
+      <td style="font-weight:600;color:var(--ink)">${p}</td>
+      <td><span class="badge low" style="font-size:9px">${meta.cat}</span></td>
+      <td>${a}%</td><td>${b}%</td><td>${c}%</td>
+      <td><span class="fw-score-comp ${compClass}">${comp}%</span></td>
+      <td style="font-size:11.5px;color:var(--ev-high);font-weight:600">${strong[0]} (${strong[1]}%)</td>
+      <td style="font-size:11.5px;color:var(--alert);font-weight:600">${weak[0]} (${weak[1]}%)</td>
+    </tr>`;
+  }).join('');
+  v.innerHTML = intro + `<div style="overflow-x:auto"><table class="fw-score-table"><thead><tr><th>Product</th><th>Category</th><th>A: Absorption (40%)</th><th>B: Cellular (35%)</th><th>C: Retention (25%)</th><th>Composite</th><th>Strongest</th><th>Weakest</th></tr></thead><tbody>${rows}</tbody></table></div>`;
+}
+function switchFW(which, btn){
+  ['a','b','c','ref','score'].forEach(x=>{
+    document.getElementById('fw-'+x+'-view').style.display = x===which?'block':'none';
+  });
+  document.querySelectorAll('.fw-tab').forEach(b=>b.classList.remove('active'));
+  if(btn) btn.classList.add('active');
+}
+buildFw('fw-a-view',FW_A,{title:'Framework A — Absorption (Gut → Blood) · Weight 40%',body:"How water and electrolytes move from intestinal lumen into bloodstream. Most time-critical framework — failure here means nothing else works. Answers 'Which solution should I give NOW?'",lay:"How fast water gets from your gut into your blood. The 'speed' framework — matters most when you need hydration NOW (illness, heatstroke). If a drink fails here, nothing downstream can save it."});
+buildFw('fw-b-view',FW_B,{title:'Framework B — Cellular Distribution (Blood → Cells) · Weight 35%',body:"How water and electrolytes enter cells and stay there. Separates clinical rehydration from athletic performance. Answers 'Why do athletes cramp even when they drink enough?'",lay:"How well water actually gets INTO your cells once it's in your blood. The 'depth' framework — explains why an athlete can be drinking constantly and still cramp. The water reached the body but never made it into the muscle cells."});
+buildFw('fw-c-view',FW_C,{title:'Framework C — Systemic Retention (Body keeping water) · Weight 25%',body:"Hormonal and renal systems deciding to retain or excrete. Explains why plain water in extreme heat can worsen dehydration.",lay:"Whether your body keeps the water you drank, or pees it back out. The 'lockup' framework — why drinking only plain water in extreme heat can backfire (your kidneys flush it out faster than you replaced it)."});
+buildFwRef();
+buildFwScore();
+
+// ============ INGREDIENT SCIENCE ============
+const SCIENCE = [
+  {title:'Sodium (Na)',
+   lay:"The conductor of the hydration orchestra. Without enough salt, your body can't hold onto water — the kidneys just flush it out. Drinking only plain water in heat is how marathon runners end up in the ER.",
+   body:`<p><strong>Mechanism:</strong> Primary osmotic gradient driver. Na creates the concentration differential pulling water from gut lumen into bloodstream. Triggers ADH release via hypothalamic osmoreceptors. Sweat loses Na at 20-80 mmol/L (Baker LB 2017 — wide individual variability).</p><p><strong>Evidence (High):</strong> Sodium-free fluid during exercise caused -2.48 mmol/L/h plasma Na decline vs -0.86 with Na-containing drink (Vrijens & Rehrer 1999). PMC8955583 (2022): systematic review confirms Na critical for plasma volume, EAH prevention.</p><p><strong>Caveat:</strong> Excessive Na without K can contribute to hypertension chronically. Clinical context differs from sports context.</p>`},
+  {title:'Potassium (K)',
+   lay:"Powers your muscle contractions and nerve signals. But K alone is useless without magnesium — it's like fuel without a starter motor. The pump that uses K can't run without Mg.",
+   body:`<p><strong>Mechanism:</strong> Na/K-ATPase substrate. K concentration gradient drives membrane potential essential for muscle contraction and nerve signalling. McKenna 2021: intense exercise drops intracellular K+ by ~21mM.</p><p><strong>Evidence (High):</strong> PMC10973985 meta-analysis: K supplementation associated with improved endothelial function. However, most K from electrolyte supplements (200-370mg) is &lt;10% of daily food requirement.</p><p><strong>Critical context:</strong> K without Mg cofactor severely limits Na/K-ATPase function. Liquid I.V. (370mg K + 0mg Mg) is the most cited formulation concern in this database.</p><p><strong>Caveat:</strong> Contraindicated in hyperkalemia, CKD, and with K-sparing diuretics.</p>`},
+  {title:'Magnesium (Mg)',
+   lay:"The unsung hero. Required for every energy reaction in your body — and for the cell pump that uses potassium. 70% of Indians don't get enough through diet. Most cheap supplements use a form your body barely absorbs.",
+   body:`<p><strong>Mechanism:</strong> ATP cofactor — Mg-ATP is the actual substrate used by all ATPase enzymes. Without Mg2+, Na/K-ATPase cannot function regardless of K+ concentration. Required cofactor for 300-600+ enzymatic reactions.</p><p><strong>Evidence (High):</strong> Apell et al. Biochemistry 2017: Mg2+ is essential cofactor for Na,K-ATPase ATP hydrolysis. Tarsitano et al. J Transl Med 2024: Mg supplementation reduces muscle soreness across activity types.</p><p><strong>Deficiency:</strong> 31% of global population has inadequate Mg intake (Lancet 2024). India: 70% below 50% RDA (NNMB).</p><p><strong>Bioavailability:</strong> Mg oxide ~4% absorbed. Mg citrate and glycinate significantly more bioavailable. Most cheap products use oxide. Boron (3mg/day) reduces renal Mg excretion.</p>`},
+  {title:'Taurine',
+   lay:"Helps cells hold their shape under heat — like a structural beam under stress. NOT a focus booster despite the marketing. The cognitive benefit comes from preventing dehydration, not from taurine itself.",
+   body:`<p><strong>Mechanism:</strong> Organic osmolyte — accumulates in cells under heat/exercise stress. Prevents cellular volume disruption. One of most abundant amino acids in brain, retina, muscle, and heart (Ripps & Shen 2012).</p><p><strong>Heat tolerance evidence (Medium, 2026):</strong> PMC12943169 narrative review: ~0.3-0.4°C core temp reductions; sweat rate +8-15% (Peel et al. 2024).</p><p><strong>CRITICAL CAVEAT — Cognition:</strong> 2025 meta-analysis (Int J Food Sci Nutr, 7 RCTs, n=402) found taurine ALONE did NOT significantly improve cognitive scores in healthy adults. Most important recent finding for products making cognitive claims with taurine.</p><p><strong>Correct claim framework:</strong> "Prevents dehydration-driven cognitive impairment" ✓. "Directly improves focus via taurine" ✗.</p>`},
+  {title:'B-Vitamins (B1/B3/B6/B12)',
+   lay:"The energy-line workers. B1 is the gatekeeper — without it, your cells can't produce energy efficiently and lactic acid builds up. Missing from most electrolyte products despite being cheap to add.",
+   body:`<p><strong>B1 (Thiamine) — Krebs cycle gatekeeper:</strong> TPP cofactor for pyruvate dehydrogenase. B1 deficiency → pyruvate accumulation → lactate acidosis → decreased ATP (PMC12251314, 2025). Absent from Liquid I.V., Fast&Up, Supply6.</p><p><strong>B3 (Niacin):</strong> NAD+ precursor — every ATP synthesis is NADH-dependent.</p><p><strong>B6 (Pyridoxine):</strong> Direct precursor for serotonin, dopamine, GABA.</p><p><strong>B12 (Cobalamin):</strong> Myelin sheath integrity, methylation. Methylcobalamin preferred for CNS penetration.</p><p><strong>Evidence:</strong> PMID 37786436 (Int J Med Sci 2023): B-complex supplementation improved anti-fatigue markers and exercise performance.</p>`},
+  {title:'Zinc & Boron',
+   lay:"Two underrated minerals. Zinc helps cells take in water (like building more doors in the wall). Boron makes the magnesium you eat actually stay in the body, instead of being peed out — getting 3mg of boron is more useful than adding 20mg more Mg.",
+   body:`<p><strong>Zinc — AQP regulator + immune:</strong> Controls AQP3/AQP7 gene expression (J Gen Physiol 2007; Int J Mol Sci 2024). Carbonic anhydrase activity. Jafari meta-analysis (35 RCTs, n=1995): significant CRP/hs-CRP reduction, CD4 improvement. Cochrane 2024: possible cold duration reduction (-2.37 days, wide CI) but evidence judged insufficient to recommend. Safe to ~40mg (copper competition above).</p><p><strong>Boron — Mineral retention multiplier:</strong> USDA PMC4712861: 3mg/day reduced urinary Ca excretion 44% in postmenopausal women. Mg/Ca excretion both reduced. Effect strongest when baseline Mg low. <strong>3mg boron amplifies effective Mg dose more than adding 20mg extra Mg.</strong> Absent from all Indian DTC competitors except Osmo. Most under-discussed ingredient in sports hydration.</p>`},
+  {title:'Glucose & SGLT1 cotransport',
+   lay:"Sugar's special job: it helps salt drag water into your gut. This pathway is the genius behind WHO ORS — it works even when your gut is damaged by diarrhea. But for daily/athletic use, sugar slows things down. That's the trade-off zero-sugar brands accept.",
+   body:`<p><strong>Mechanism:</strong> SGLT1 simultaneously absorbs Na+ and glucose; hundreds of water molecules follow per cycle. Basis of WHO ORS therapy.</p><p><strong>Evidence (High):</strong> PMC3950600 (2014): historical review of SGLT1 + ORT. PMC7210290 (2020): SGLT1 mechanism intact even in severe rotavirus diarrhea — why ORS works when gut is compromised. Optimal ratio: 45-60 mEq/L Na + 80-110 mM glucose.</p><p><strong>Trade-off:</strong> Most critical for acute illness recovery. For daily/athletic use, hypotonic zero-sugar drinks perform better via gastric emptying advantage (Rowlands 2021 meta-analysis).</p><p><strong>FSSAI Oct 2025:</strong> banned 'ORS' label for products not meeting WHO specs. Delhi HC upheld Nov 2025.</p>`}
+];
+document.getElementById('scienceGrid').innerHTML = SCIENCE.map(s=>`<div class="science-card"><div class="science-title">${s.title}</div><div class="lay-callout"><span class="lay-callout-icon">💡</span><div class="lay-callout-body"><span class="lay-callout-label">In plain English</span><div class="lay-callout-text"><em>${s.lay}</em></div></div></div><div class="science-body">${wrapTerms(s.body)}</div></div>`).join('');
+
+// ============ SOURCES & REFERENCES ============
+const SOURCES = [
+  // Peer-reviewed primary research papers
+  {id:'PMC3950600',type:'paper',title:'Reduced-osmolarity ORS — historical review of SGLT1 + oral rehydration therapy',authors:'WHO / Cochrane summary',year:2014,topics:['WHO ORS','SGLT1'],usedFor:'Evidence base for WHO ORS clinical card; SGLT1 cotransport pathway'},
+  {id:'PMC7210290',type:'paper',title:'SGLT1 mechanism intact in severe rotavirus diarrhea',authors:'Field MJ et al.',year:2020,topics:['SGLT1','Cholera','Diarrhea'],usedFor:'Mechanistic justification for why WHO ORS works when gut is compromised'},
+  {id:'PMC8955583',type:'paper',title:'Sodium critical for plasma volume + EAH prevention — systematic review',authors:'Systematic review',year:2022,topics:['Sodium','Plasma volume','Hyponatremia'],usedFor:'Sodium ingredient science card; evidence for ADH/osmoreceptor mechanism'},
+  {id:'PMC10973985',type:'paper',title:'Potassium supplementation and endothelial function — meta-analysis',authors:'Meta-analysis',year:2023,topics:['Potassium','Cardiovascular'],usedFor:'Potassium ingredient science card'},
+  {id:'PMC3293068',type:'paper',title:'Coconut water vs commercial sports drink — endurance RCT (n=12)',authors:'Kalman DS et al.',year:2012,topics:['Coconut water','Rehydration','Traditional'],usedFor:'Coconut water product card evidence'},
+  {id:'PMC11789751',type:'meta',title:'Oral Rehydration Beverages for Treating Exercise-Associated Dehydration — Part II: Alternatives to CE drinks (milk, coconut water, beer)',authors:'J Athl Train — systematic review',year:2025,topics:['Traditional','Milk','Coconut water','Adjunct hydration'],usedFor:'Coconut water, Chaas, Nimbu pani, Mor/Sambharam product cards — replaces unverified PMC12827769'},
+  {id:'PMC11789749',type:'meta',title:'Oral Rehydration Beverages for Treating Exercise-Associated Dehydration — Part I: Carbohydrate-Electrolyte Solutions',authors:'J Athl Train — systematic review',year:2025,topics:['ORS','Sports drinks','CE solutions'],usedFor:'Companion citation for WHO ORS, Gatorade, Pocari Sweat, Liquid I.V. product cards'},
+  {id:'PMC9206992',type:'paper',title:'Sattu standardisation — mineral content + composition study',authors:'Indian standardisation study',year:2022,topics:['Sattu','Traditional'],usedFor:'Sattu product card evidence'},
+  {id:'PMC12943169',type:'paper',title:'Taurine for heat tolerance — narrative review',authors:'Peel J et al.',year:2026,topics:['Taurine','Heat'],usedFor:'Taurine science card; Osmo product card; Framework B (organic osmolyte)'},
+  {id:'PMC12251314',type:'paper',title:'B1 (thiamine) supplementation — anti-fatigue + exercise performance',authors:'Clinical study',year:2025,topics:['B-vitamins','Thiamine','Energy'],usedFor:'B-vitamin science card; Osmo product card'},
+  {id:'PMC4730480',type:'paper',title:'82% of Indian workers exposed above WBGT recommendations',authors:'Indian occupational health study',year:2016,topics:['India','Heat','WBGT'],usedFor:'India context dashboard; hero stat'},
+  {id:'PMC4712861',type:'paper',title:'Boron 3mg/day reduced urinary Ca excretion 44% — USDA n=12',authors:'Nielsen FH (USDA)',year:1987,topics:['Boron','Mineral retention'],usedFor:'Boron science card; Framework C (mineral retention); Osmo product card'},
+  {id:'PMID 37786436',type:'paper',title:'B-complex supplementation — anti-fatigue markers + exercise performance',authors:'Int J Med Sci',year:2023,topics:['B-vitamins','Exercise'],usedFor:'B-vitamin science card'},
+  {id:'Apell 2017',type:'paper',title:'Mg²⁺ is obligate cofactor for Na/K-ATPase ATP hydrolysis',authors:'Apell HJ et al. — Biochemistry',year:2017,topics:['Magnesium','Na/K-ATPase'],usedFor:'Liquid I.V. product card (Mg gap); Mg science card; Framework B'},
+  {id:'Vrijens & Rehrer 1999',type:'paper',title:'Sodium-free fluid → plasma Na decline at -2.48 mmol/L/h vs -0.86 with Na',authors:'Vrijens DMJ, Rehrer NJ — J Appl Physiol',year:1999,topics:['Sodium','Sweat','Exercise'],usedFor:'Sodium science card primary citation'},
+  {id:'Baker 2017',type:'paper',title:'Sweat sodium concentration variability (20-80 mmol/L) — individual',authors:'Baker LB — Sports Med',year:2017,topics:['Sodium','Sweat'],usedFor:'Sodium science card; Precision Hydration personalisation rationale'},
+  {id:'McKenna 2021',type:'paper',title:'Intense exercise depletes intracellular K⁺ by ~21 mM',authors:'McKenna MJ',year:2021,topics:['Potassium','Exercise'],usedFor:'Framework B (intracellular K gradient); K science card'},
+  {id:'Rowlands 2021',type:'meta',title:'Gastric emptying meta-analysis — hypotonic superior (28 studies)',authors:'Rowlands DS et al.',year:2021,topics:['Gastric emptying','Hypotonic'],usedFor:'Framework A (gastric emptying); zero-sugar product rationale'},
+  {id:'Maughan 2018',type:'paper',title:'Pilocarpine sweat-test methodology — Precision Hydration',authors:'Maughan RJ et al.',year:2018,topics:['Sweat testing','Sodium'],usedFor:'PH 1500 product card; sweat-test rationale'},
+  {id:'Maughan AJCN 2016 (PMID 26702122)',type:'paper',title:'Beverage Hydration Index — original AJCN paper (water 1.0 reference; ORS/milk BHI ~1.5)',authors:'Maughan RJ et al. — Am J Clin Nutr',year:2016,topics:['Plain water','Retention','BHI'],usedFor:'Plain water product card; 58% hero stat. Confirmed citation after 2026-05-11 audit (previously misattributed to Nutrients 2023).'},
+  {id:'Maughan 2021 (PMC8465972)',type:'paper',title:'Beverage Hydration Index follow-up — influence of electrolytes, carbohydrate, protein',authors:'Maughan RJ et al. — Nutrients',year:2021,topics:['BHI','Electrolytes','Protein'],usedFor:'Companion citation supporting BHI extension to CE+protein drinks'},
+  {id:'Murray SMR',type:'paper',title:'Gatorade + sports drink performance review',authors:'Murray B — Sports Med Reviews',year:0,topics:['Gatorade','Sports drinks'],usedFor:'Gatorade product card evidence'},
+  {id:'Rowe 2021',type:'paper',title:'Maurten hydrogel — GI tolerance in runners vs cyclists',authors:'Rowe JT et al. — Leeds Beckett',year:2021,topics:['Maurten','Carbs','GI'],usedFor:'Maurten Drink Mix 320 product card'},
+  {id:'Tarsitano 2024',type:'paper',title:'Magnesium supplementation reduces muscle soreness',authors:'Tarsitano MG et al. — J Transl Med',year:2024,topics:['Magnesium','Recovery'],usedFor:'Magnesium science card'},
+  {id:'Peel 2024',type:'paper',title:'Taurine sweat rate +8-15% under heat stress',authors:'Peel J et al.',year:2024,topics:['Taurine','Heat','Sweat'],usedFor:'Taurine science card; Osmo card'},
+  {id:'Ripps & Shen 2012',type:'paper',title:'Taurine abundance in brain, retina, muscle, heart',authors:'Ripps H, Shen W',year:2012,topics:['Taurine','Biology'],usedFor:'Taurine science card'},
+  {id:'Jafari RCTs',type:'meta',title:'Zinc supplementation — CRP/CD4 + immune meta-analysis (35 RCTs, n=1995)',authors:'Jafari A et al.',year:0,topics:['Zinc','Immune'],usedFor:'Zinc & Boron science card'},
+  {id:'SMART NEJM 2018',type:'paper',title:'Balanced crystalloids vs normal saline — kidney outcomes (SMART trial)',authors:'Semler MW et al. — NEJM',year:2018,topics:['Ringer\'s','IV fluids'],usedFor:'Ringer\'s Lactate + Normal Saline product cards'},
+  {id:'hDrop 2026',type:'paper',title:'Dynamic sweat sodium varies 60%+ with exercise intensity',authors:'hDrop sweat sensor study',year:2026,topics:['Sweat testing','Sodium'],usedFor:'PH 1500 product card caveat on single-site testing'},
+  {id:'Taurine cog 2025',type:'meta',title:'Taurine alone did NOT improve cognition — meta-analysis (7 RCTs, n=402)',authors:'Int J Food Sci Nutr',year:2025,topics:['Taurine','Cognition'],usedFor:'Taurine science card; corrects overclaiming on cognitive benefit'},
+  {id:'Cochrane 2024 — Zn',type:'meta',title:'Zinc for prevention/treatment of common cold — Cochrane (-2.37 days mean reduction, wide CI; evidence judged insufficient to recommend)',authors:'Nault D et al. — Cochrane Database of Systematic Reviews',year:2024,topics:['Zinc','Immune','Common cold'],usedFor:'Zinc & Boron science card — framing tightened 2026-05-11 to match Cochrane\'s actual hedged conclusion'},
+  {id:'Lancet GH 2024',type:'paper',title:'31% of global population has inadequate Mg intake',authors:'Lancet Global Health',year:2024,topics:['Magnesium','Global deficiency'],usedFor:'Magnesium science card; hero stat'},
+  {id:'J Gen Physiol 2007',type:'paper',title:'Zinc regulates AQP3/AQP7 gene expression',authors:'J Gen Physiol',year:2007,topics:['Zinc','Aquaporins'],usedFor:'Zinc & Boron science card; Framework A (AQP1) + Framework B (AQP3/7)'},
+  {id:'Int J Mol Sci 2024',type:'paper',title:'Zinc + aquaporin trafficking — updated review',authors:'Int J Mol Sci',year:2024,topics:['Zinc','Aquaporins'],usedFor:'Zinc & Boron science card'},
+
+  // Clinical / professional society guidelines
+  {id:'WHO Diarrhoea 2005',type:'guideline',title:'WHO Diarrhoea Treatment Guidelines — reduced-osmolarity ORS',authors:'World Health Organization',year:2005,topics:['WHO ORS','Diarrhea'],usedFor:'WHO ORS product card; Electral product card'},
+  {id:'WHO/SEARO 2026',type:'guideline',title:'WHO South-East Asia — traditional drinks as adjunct hydration',authors:'WHO-SEARO',year:2026,topics:['Traditional','India'],usedFor:'Chaas + nimbu pani product cards'},
+  {id:'AAP Diarrhea',type:'guideline',title:'American Academy of Pediatrics — paediatric diarrhea management',authors:'AAP',year:0,topics:['Pediatrics','ORS'],usedFor:'Pedialyte product card'},
+  {id:'AND 2016',type:'guideline',title:'Academy of Nutrition + Dietetics + ACSM + DC — sports nutrition position',authors:'AND / ACSM / DC',year:2016,topics:['Sports nutrition','Sodium'],usedFor:'LMNT product card; sodium claims context'},
+  {id:'StatPearls 2023',type:'guideline',title:'Ringer\'s lactate — clinical use, contraindications',authors:'StatPearls',year:2023,topics:['Ringer\'s','IV fluids'],usedFor:'Ringer\'s Lactate product card'},
+
+  // Regulatory / government bodies
+  {id:'FSSAI Oct 2025',type:'regulatory',title:'FSSAI directive — "ORS" label restricted to WHO formulations',authors:'Food Safety and Standards Authority of India',year:2025,topics:['FSSAI','ORS','India regulation'],usedFor:'Electral, Enerzal product cards; India regulatory context'},
+  {id:'Delhi HC Nov 2025',type:'regulatory',title:'Delhi High Court — upheld FSSAI ban on non-WHO ORS labelling',authors:'Delhi High Court',year:2025,topics:['ORS','Litigation','India'],usedFor:'Electral product card; India regulatory context'},
+  {id:'FSSAI HFSS 2024',type:'regulatory',title:'FSSAI front-of-pack HFSS warnings — sugar/salt/fat',authors:'FSSAI',year:2024,topics:['FSSAI','Labelling','HFSS'],usedFor:'India regulatory context; Liquid I.V. + Fast&Up sugar discussion'},
+  {id:'FSSAI Pricing 2024',type:'regulatory',title:'FSSAI pricing + classification documents — food supplement vs drug',authors:'FSSAI',year:2024,topics:['FSSAI','Classification'],usedFor:'Enerzal product card classification'},
+  {id:'USDA Boron',type:'regulatory',title:'USDA Agricultural Research Service — boron + mineral retention research',authors:'USDA ARS',year:0,topics:['USDA','Boron'],usedFor:'Boron science card; Osmo product card'},
+  {id:'WADA',type:'regulatory',title:'World Anti-Doping Agency — batch testing standards for sports supplements',authors:'WADA',year:0,topics:['Anti-doping','Sports'],usedFor:'Precision Hydration product cards (batch-tested claim)'},
+  {id:'ICMR / NNMB',type:'regulatory',title:'ICMR / NNMB — Indian RDA + nutrient adequacy survey (70% below 50% RDA Mg/Ca/Fe/Zn/B12)',authors:'ICMR / National Nutrition Monitoring Bureau',year:0,topics:['ICMR','India','Deficiency'],usedFor:'Mg science card; India context'},
+  {id:'IFCT 2017',type:'regulatory',title:'Indian Food Composition Tables — traditional drink composition',authors:'NIN / ICMR',year:2017,topics:['IFCT','Traditional','India'],usedFor:'Nimbu pani + traditional drink product cards'},
+
+  // Industry / market intelligence + manufacturer
+  {id:'India Mkt 2025-34',type:'industry',title:'India electrolyte market — USD 294M (2025) → USD 707M (2034), 10.12% CAGR',authors:'India market intelligence',year:2025,topics:['Market size','India','Growth'],usedFor:'India context dashboard; market sizing data'},
+  {id:'Hypotonic CAGR',type:'industry',title:'Hypotonic drinks segment — 7.12% CAGR projection',authors:'Category report',year:2025,topics:['Hypotonic','Market'],usedFor:'India context; category trend insight'},
+  {id:'Indian Trad Foods 2018',type:'industry',title:'Indian Traditional Foods Survey 2018',authors:'Survey report',year:2018,topics:['Traditional','India'],usedFor:'Aam panna + traditional drink cards'},
+  {id:'Otsuka',type:'industry',title:'Otsuka Pharmaceutical clinical trials — Pocari Sweat hospital use',authors:'Otsuka Pharmaceutical',year:0,topics:['Pocari Sweat','Clinical'],usedFor:'Pocari Sweat product card'},
+  {id:'Japan Sport Assoc',type:'industry',title:'Japan Sport Association — caution against Pocari Sweat overuse',authors:'Japan Sport Association',year:0,topics:['Pocari Sweat','Safety'],usedFor:'Pocari Sweat product card caveat'},
+  {id:'Harvard Health',type:'industry',title:'Harvard Health Publishing — Gatorade not appropriate as illness ORS',authors:'Harvard Health',year:0,topics:['Gatorade','Public health'],usedFor:'Gatorade product card evidence'},
+  {id:'220 Triathlon',type:'industry',title:'220 Triathlon — Nuun Sport review + Mg oxide bioavailability',authors:'220 Triathlon Magazine',year:0,topics:['Nuun','Bioavailability'],usedFor:'Nuun Sport product card'},
+  {id:'PH Lab Reports',type:'industry',title:'Precision Fuel & Hydration — lab + product spec reports',authors:'Precision Fuel & Hydration',year:0,topics:['Precision Hydration'],usedFor:'PH 1000 product card composition'},
+  {id:'Gatorade Spec',type:'industry',title:'Gatorade product specification sheet',authors:'PepsiCo / Gatorade',year:0,topics:['Gatorade','Spec'],usedFor:'Gatorade Zero + composition data'},
+  {id:'Powerade Spec',type:'industry',title:'Powerade product specification sheet',authors:'The Coca-Cola Company',year:0,topics:['Powerade','Spec'],usedFor:'Powerade product card composition'},
+  {id:'Fast&Up Spec',type:'industry',title:'Fast&Up Reload product specification sheet',authors:'Fast&Up India',year:0,topics:['Fast&Up','India DTC'],usedFor:'Fast&Up Reload product card composition'},
+  {id:'Supply6 Spec',type:'industry',title:'Supply6 product specification sheet',authors:'Supply6',year:0,topics:['Supply6','India DTC'],usedFor:'Supply6 product card composition'},
+  {id:'Nuun Spec',type:'industry',title:'Nuun product specification sheets',authors:'Nuun (Nestlé Health Science)',year:0,topics:['Nuun','Spec'],usedFor:'Nuun Sport + Nuun Daily product cards'},
+
+  // Traditional / historical knowledge
+  {id:'Ayurvedic texts',type:'traditional',title:'Ayurvedic source texts — sattu, aam panna, kanji classifications',authors:'Classical Ayurvedic literature',year:0,topics:['Ayurveda','Traditional'],usedFor:'Aam panna + sattu + kanji product cards'},
+  {id:'Kargil rations',type:'traditional',title:'Kargil War sattu ration documentation — Indian Army',authors:'Defence nutrition records',year:1999,topics:['Sattu','Military','India'],usedFor:'Sattu product card historical context'}
+];
+
+const SRC_TYPE_LABELS = {
+  paper:'Peer-reviewed',
+  meta:'Meta-analysis',
+  guideline:'Clinical guideline',
+  regulatory:'Regulatory',
+  industry:'Industry / market',
+  traditional:'Traditional knowledge'
+};
+
+function renderSourcesStats(){
+  const total = SOURCES.length;
+  const peer = SOURCES.filter(s=>s.type==='paper'||s.type==='meta').length;
+  const reg = SOURCES.filter(s=>s.type==='regulatory'||s.type==='guideline').length;
+  const stats = [
+    {n:total,label:'Total sources cited across the dashboard'},
+    {n:peer,label:'Peer-reviewed papers & meta-analyses'},
+    {n:reg,label:'Regulatory bodies & clinical guidelines'},
+    {n:30,label:'Products catalogued (clinical, sports, DTC, traditional)'},
+    {n:23,label:'Biological pathways modelled across 3 frameworks'}
+  ];
+  document.getElementById('sourcesStats').innerHTML = stats.map(s=>`<div class="src-stat"><span class="src-stat-num">${s.n}</span><div class="src-stat-label">${s.label}</div></div>`).join('');
+}
+
+function renderSourcesFilters(){
+  const counts = {all:SOURCES.length};
+  SOURCES.forEach(s=>{counts[s.type]=(counts[s.type]||0)+1});
+  const types = [['all','All sources']].concat(Object.entries(SRC_TYPE_LABELS));
+  document.getElementById('sourcesFilters').innerHTML = types.map(([k,label])=>{
+    const cnt = counts[k]||0;
+    const active = k===window._srcFilter ? 'active' : '';
+    return `<button class="src-pill ${active}" data-type="${k}" onclick="setSourceFilter('${k}')">${label} <span class="src-pill-count">${cnt}</span></button>`;
+  }).join('');
+}
+
+function setSourceFilter(t){
+  window._srcFilter = t;
+  renderSourcesFilters();
+  renderSources();
+}
+
+function renderSources(){
+  const filter = window._srcFilter || 'all';
+  const q = (document.getElementById('sourcesSearchInput').value||'').trim().toLowerCase();
+  let list = SOURCES.slice();
+  if(filter !== 'all') list = list.filter(s=>s.type===filter);
+  if(q){
+    list = list.filter(s=>{
+      const hay = (s.id+' '+s.title+' '+s.authors+' '+s.topics.join(' ')+' '+s.usedFor).toLowerCase();
+      return hay.includes(q);
+    });
+  }
+  // Sort: newer year first, year 0 (no date) last
+  list.sort((a,b)=>{
+    if(a.year && b.year) return b.year - a.year;
+    if(a.year && !b.year) return -1;
+    if(!a.year && b.year) return 1;
+    return a.title.localeCompare(b.title);
+  });
+  document.getElementById('srcCount').textContent = list.length;
+  if(list.length === 0){
+    document.getElementById('sourcesGrid').innerHTML = '<div class="sources-empty">No sources match your filters. Try a different category or clear the search.</div>';
+    return;
+  }
+  document.getElementById('sourcesGrid').innerHTML = list.map(s=>{
+    const yearStr = s.year ? s.year : '—';
+    const topicChips = s.topics.map(t=>`<span class="src-topic">${t}</span>`).join('');
+    return `<div class="source-card">
+      <div class="source-card-head">
+        <span class="source-type type-${s.type}">${SRC_TYPE_LABELS[s.type]}</span>
+        <span class="source-year">${yearStr}</span>
+      </div>
+      <h3 class="source-title">${s.title}</h3>
+      <div class="source-authors">${s.authors}</div>
+      <div class="source-topics">${topicChips}</div>
+      <div class="source-ident">${s.id}</div>
+      <div class="source-used"><strong>Used for:</strong> ${s.usedFor}</div>
+    </div>`;
+  }).join('');
+}
+
+function initSources(){
+  window._srcFilter = 'all';
+  renderSourcesStats();
+  renderSourcesFilters();
+  renderSources();
+}
+initSources();
+
+// ============ CHAT MAXIMIZE ============
+function toggleChatMaximize(){
+  const overlay = document.getElementById('chatOverlay');
+  const icon = document.getElementById('chatMaxIcon');
+  const btn = document.getElementById('chatMaxBtn');
+  if(overlay.classList.contains('maximized')){
+    overlay.classList.remove('maximized');
+    icon.innerHTML = '<path d="M3 3h7v2H5v5H3V3zm11 0h7v7h-2V5h-5V3zM3 14h2v5h5v2H3v-7zm16 0h2v7h-7v-2h5v-5z"/>';
+    btn.title = 'Maximize';
+  } else {
+    overlay.classList.add('maximized');
+    icon.innerHTML = '<path d="M5 3h2v5h5v2H5V3zm12 0h2v7h-7V8h5V3zM5 14h7v7h-2v-5H5v-2zm12 0h2v7h-7v-2h5v-5z"/>';
+    btn.title = 'Restore';
+  }
+}
+
+// Init
+init();
+</script>
+</body>
+</html>

@@ -1,0 +1,18 @@
+# Cloudflare Worker config — hydration dashboard chat + paper generator
+# Deploy:  cd cloudflare-worker && wrangler deploy
+# Logs:    wrangler tail
+#
+# After deploy you get a URL like:
+#   https://hydration-chat.<your-cf-subdomain>.workers.dev
+# Paste that URL into the dashboard's CHAT_API_URL constant in index.html.
+
+name = "hydration-chat"
+main = "worker.js"
+compatibility_date = "2025-12-01"
+
+# Free plan = 100,000 requests/day. More than enough for this dashboard.
+# Worker CPU limit is 30s on paid plan, 10ms CPU on free (Anthropic API call
+# is I/O-bound, not CPU-bound, so this is fine).
+
+[observability]
+enabled = true
